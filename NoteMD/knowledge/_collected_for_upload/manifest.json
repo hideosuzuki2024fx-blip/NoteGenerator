@@ -1,0 +1,93 @@
+[
+  {
+    "name": "context_editorialstudio_2025-10-19-1705.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\context_versions\\context_editorialstudio_2025-10-19-1705.md",
+    "lastWriteTime": "2025-10-19T17:05:09.2897682+09:00",
+    "sizeKB": 0.1,
+    "guaranteed": false
+  },
+  {
+    "name": "current_context.txt",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\current_context.txt",
+    "lastWriteTime": "2025-10-19T17:05:09.2897682+09:00",
+    "sizeKB": 0.1,
+    "guaranteed": false
+  },
+  {
+    "name": "directory_map.json",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\directory_map.json",
+    "lastWriteTime": "2025-10-14T15:11:11.9493381+09:00",
+    "sizeKB": 0.7,
+    "guaranteed": false
+  },
+  {
+    "name": "Interaction_Core.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\Interaction_Core.md",
+    "lastWriteTime": "2025-10-19T22:23:52.4708394+09:00",
+    "sizeKB": 2.0,
+    "guaranteed": true
+  },
+  {
+    "name": "knowledge_manifest.json",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\knowledge_manifest.json",
+    "lastWriteTime": "2025-10-19T22:37:49.1796548+09:00",
+    "sizeKB": 2.1,
+    "guaranteed": true
+  },
+  {
+    "name": "Knowledge_Registry.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\Knowledge_Registry.md",
+    "lastWriteTime": "2025-10-19T22:36:37.7393102+09:00",
+    "sizeKB": 1.8,
+    "guaranteed": true
+  },
+  {
+    "name": "LayerA_WorldContext.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\LayerA_WorldContext.md",
+    "lastWriteTime": "2025-10-19T22:04:59.1958513+09:00",
+    "sizeKB": 2.3,
+    "guaranteed": true
+  },
+  {
+    "name": "LayerC_DialogueOrchestration.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\LayerC_DialogueOrchestration.md",
+    "lastWriteTime": "2025-10-19T22:07:57.9502917+09:00",
+    "sizeKB": 2.5,
+    "guaranteed": true
+  },
+  {
+    "name": "Amy_Persona.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\personas\\Amy_Persona.md",
+    "lastWriteTime": "2025-10-19T22:28:14.5652583+09:00",
+    "sizeKB": 2.6,
+    "guaranteed": true
+  },
+  {
+    "name": "Ayase_Persona.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\personas\\Ayase_Persona.md",
+    "lastWriteTime": "2025-10-19T22:30:49.5648849+09:00",
+    "sizeKB": 2.7,
+    "guaranteed": true
+  },
+  {
+    "name": "Ponta_Persona.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\personas\\Ponta_Persona.md",
+    "lastWriteTime": "2025-10-19T22:31:47.8196799+09:00",
+    "sizeKB": 2.8,
+    "guaranteed": true
+  },
+  {
+    "name": "README_NoteGen.md",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\README_NoteGen.md",
+    "lastWriteTime": "2025-10-14T15:31:26.3772366+09:00",
+    "sizeKB": 0.6,
+    "guaranteed": false
+  },
+  {
+    "name": "persona_registry.json",
+    "source": "C:\\Users\\MaoGon\\OneDrive\\デスクトップ\\CGPT_Project\\NoteGenerator\\NoteMD\\knowledge\\registry\\persona_registry.json",
+    "lastWriteTime": "2025-10-19T14:06:36.1740758+09:00",
+    "sizeKB": 0.0,
+    "guaranteed": true
+  }
+]

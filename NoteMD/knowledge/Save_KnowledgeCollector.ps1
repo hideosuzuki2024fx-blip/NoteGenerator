@@ -1,0 +1,1 @@
+$ThisScript = $MyInvocation.MyCommand.Definition

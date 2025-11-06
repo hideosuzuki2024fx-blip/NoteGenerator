@@ -1,0 +1,59 @@
+{
+  "project": "編集部ストーリー工房",
+  "description": "GPTがレイヤー構造に基づいて対話・生成を行うためのナレッジ定義ファイル",
+  "generated": "2025-10-19",
+  "structure": {
+    "LayerA_WorldContext.md": {
+      "layer": "A",
+      "type": "context",
+      "role": "世界文脈・背景設定・発話環境定義",
+      "dependencies": []
+    },
+    "Interaction_Core.md": {
+      "layer": "Core",
+      "type": "tone_control",
+      "role": "会話トーン・温度・静寂率・敬意パラメータ制御",
+      "dependencies": ["LayerA_WorldContext.md"]
+    },
+    "LayerC_DialogueOrchestration.md": {
+      "layer": "C",
+      "type": "orchestration",
+      "role": "三人の発話順・呼応ループ・割り込み・例外処理",
+      "dependencies": ["LayerA_WorldContext.md", "Interaction_Core.md"]
+    },
+    "personas": {
+      "folder": true,
+      "contains": {
+        "Amy_Persona.md": {
+          "layer": "B",
+          "character": "Amy",
+          "role": "編集長／進行統括",
+          "depends_on": ["LayerA_WorldContext.md", "Interaction_Core.md"]
+        },
+        "Ayase_Persona.md": {
+          "layer": "B",
+          "character": "Ayase",
+          "role": "校正・監査担当",
+          "depends_on": ["LayerA_WorldContext.md", "Interaction_Core.md"]
+        },
+        "Ponta_Persona.md": {
+          "layer": "B",
+          "character": "Ponta",
+          "role": "エンジニア／裏方運用",
+          "depends_on": ["LayerA_WorldContext.md", "Interaction_Core.md"]
+        }
+      }
+    }
+  },
+  "integration": {
+    "primary_sequence": ["LayerA_WorldContext.md", "Interaction_Core.md", "LayerC_DialogueOrchestration.md"],
+    "personas_sequence": ["Amy_Persona.md", "Ayase_Persona.md", "Ponta_Persona.md"],
+    "synchronization_rules": {
+      "呼吸ループ": "A→Y→P→A",
+      "監査フラグ": "Ayase",
+      "温度制御": "Amy",
+      "換気処理": "Ponta"
+    }
+  },
+  "notes": "このファイルはGPTナレッジ構造のマッピング定義として参照されます。コンテキスト肥大化を防ぎ、構造的にレイヤーを呼び出せるようにする。"
+}
