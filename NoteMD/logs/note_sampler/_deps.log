@@ -1,0 +1,36 @@
+Collecting playwright
+  Downloading playwright-1.55.0-py3-none-win_amd64.whl.metadata (3.5 kB)
+Collecting pandas
+  Downloading pandas-2.3.3-cp312-cp312-win_amd64.whl.metadata (19 kB)
+Collecting pyee<14,>=13 (from playwright)
+  Downloading pyee-13.0.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting greenlet<4.0.0,>=3.1.1 (from playwright)
+  Downloading greenlet-3.2.4-cp312-cp312-win_amd64.whl.metadata (4.2 kB)
+Collecting typing-extensions (from pyee<14,>=13->playwright)
+  Using cached typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting numpy>=1.26.0 (from pandas)
+  Downloading numpy-2.3.4-cp312-cp312-win_amd64.whl.metadata (60 kB)
+Collecting python-dateutil>=2.8.2 (from pandas)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas)
+  Using cached pytz-2025.2-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas)
+  Using cached tzdata-2025.2-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading playwright-1.55.0-py3-none-win_amd64.whl (35.5 MB)
+   ---------------------------------------- 35.5/35.5 MB 14.8 MB/s  0:00:02
+Downloading greenlet-3.2.4-cp312-cp312-win_amd64.whl (299 kB)
+Downloading pyee-13.0.0-py3-none-any.whl (15 kB)
+Downloading pandas-2.3.3-cp312-cp312-win_amd64.whl (11.0 MB)
+   ---------------------------------------- 11.0/11.0 MB 15.3 MB/s  0:00:00
+Downloading numpy-2.3.4-cp312-cp312-win_amd64.whl (12.8 MB)
+   ---------------------------------------- 12.8/12.8 MB 15.1 MB/s  0:00:00
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached pytz-2025.2-py2.py3-none-any.whl (509 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached tzdata-2025.2-py2.py3-none-any.whl (347 kB)
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Installing collected packages: pytz, tzdata, typing-extensions, six, numpy, greenlet, python-dateutil, pyee, playwright, pandas
+
+Successfully installed greenlet-3.2.4 numpy-2.3.4 pandas-2.3.3 playwright-1.55.0 pyee-13.0.0 python-dateutil-2.9.0.post0 pytz-2025.2 six-1.17.0 typing-extensions-4.15.0 tzdata-2025.2
