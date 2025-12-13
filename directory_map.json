@@ -1,0 +1,16 @@
+{
+  "Spec-Version": "0.1",
+  "base": "E:\\CGPT_Project\\NoteGenerator\\NoteMD",
+  "folders": {
+    "templates": "差し込みテンプレ（voice_capsule_template.md など）",
+    "voice_capsule_config": "記事ごとのテイストJSON",
+    "voice_capsule_out": "テンプレ差し込み結果（Markdown）",
+    "articles": "noteに貼る本文",
+    "logs": "再開メモ・作業ログ"
+  },
+  "namingRules": {
+    "voiceCapsuleOut": "voice_capsule_YYYY-MM-DD-HHMM_<slug>.md",
+    "article": "YYYYMMDD_<slug>.md もしくは <slug>_review_YYYY-MM-DD.md",
+    "sessionLog": "session_resume_YYYY-MM-DD-HHMM.md"
+  }
+}
