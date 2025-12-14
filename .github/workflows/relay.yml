@@ -2,6 +2,11 @@ name: LayeredRelay
 
 on:
   workflow_dispatch:
+    inputs:
+      message:
+        description: "Relay message content"
+        required: false
+        default: "🛰️ Default relay trigger"
   push:
     paths:
       - "relay_trigger.txt"
@@ -12,8 +17,10 @@ permissions:
 jobs:
   layered-relay:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,7 +34,7 @@ jobs:
           mkdir -p logs/relay
 
       - name: Run Relay Core
-        run: node scripts/relay/relay_core.js "GitHub Trigger"
+        run: node scripts/relay/relay_core.js "${{ github.event.inputs.message }}"
 
       - name: Commit Relay Logs
         run: node scripts/relay/relay_commit.js
