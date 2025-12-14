@@ -2,30 +2,32 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>NoteGenerator Relay Bridge (Test Mode)</title>
+<title>NoteGenerator Relay Bridge (Safe Encoded)</title>
 </head>
 <body>
-<h3>NoteGenerator Relay Bridge</h3>
+<h3>NoteGenerator Relay Bridge (Safe Mode)</h3>
 <pre id="output">Running test...</pre>
 
 <script>
 (async () => {
   const output = document.getElementById("output");
 
-  // --- ① URLパラメータからメッセージ取得 ---
   const params = new URLSearchParams(window.location.search);
-  const message = params.get("message") || "Test from Relay HTML";
+  const messageRaw = params.get("message") || "Relay Test";
+  const message = decodeURIComponent(messageRaw);
   output.textContent = `Message received: "${message}"`;
 
-  // --- ② GitHub APIへのリクエスト構成 ---
-  const GITHUB_TOKEN = "ghp_あなたのテスト用PATをここに貼る"; // ←テスト専用トークンを入れる
+  // 👇 トークンはテスト用のみに
+  const GITHUB_TOKEN = "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";
   const owner = "hideosuzuki2024fx-blip";
   const repo = "NoteGenerator";
   const path = `logs/relay/relay_log_${Date.now()}.txt`;
 
+  // 🧠 JSON文字列に絵文字が含まれても安全に扱えるようにBase64化
+  const contentText = `Relay executed at ${new Date().toISOString()}\nMessage: ${message}`;
   const body = {
-    message: `🛰️ Relay Test Commit: ${message}`,
-    content: btoa(`Relay executed at ${new Date().toISOString()}\nMessage: ${message}`)
+    message: `Relay Test Commit`,
+    content: btoa(unescape(encodeURIComponent(contentText))) // UTF-8→Base64
   };
 
   try {
