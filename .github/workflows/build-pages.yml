@@ -4,15 +4,15 @@ on:
     branches:
       - main
   workflow_dispatch:
-
- jobs:
+    
+ jobs: 
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v4
+        uses: actions/checkout@f4
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@f4
         with:
           node-version: 20
       - name: Install dependencies
@@ -20,8 +20,8 @@ on:
       - name: Build project
         run: npm run build
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@f4
         with:
           path: ./dist
       - name: Deploy
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@f4
