@@ -1,19 +1,20 @@
-name: Relay Proxy Listener
+name: Relay Trigger
 
 on:
-  schedule:
-    - cron: "*/5 * * * *
   workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
 jobs:
   listen-and-trigger:
     runs-on: ubuntu-latest
     permissions:
       actions: write
       contents: read
-    steps:
+    steps: 
       - name: Fetch Relay Proxy
         run: |
-          RESPONS=$(curl -s -o /dev/null -w "%{http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
           echo "Response code: $RESPONSE"
           if [ "$RESPONSE" == "200" ]; then
             echo "Triggering relay.yml..."
