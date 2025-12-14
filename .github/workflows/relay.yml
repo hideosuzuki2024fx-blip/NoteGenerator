@@ -1,0 +1,22 @@
+name: NoteRelay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "relay_trigger.txt"
+
+permissions:
+  contents: write
+
+jobs:
+  relay-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Run relay
+        run: node relay.js
