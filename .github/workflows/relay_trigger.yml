@@ -1,0 +1,21 @@
+name: Relay Proxy Trigger
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [relay_proxy_trigger]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Trigger relay.yml
+        run: |
+          curl -X POST \
+          -H Accept: application/vnd.github-+json \
+          -H Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
+          https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
+          -d {\"ref:\":\"main\",\"inputs\":{\"message\":\"Triggered from relay_proxy.html\"}}
