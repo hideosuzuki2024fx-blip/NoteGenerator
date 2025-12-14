@@ -3,8 +3,7 @@ name: Relay Proxy Listener
 on:
   schedule:
     - cron: "*/5 * * * *
- workmlow_dispatch:
-
+  workflow_dispatch:
 jobs:
   listen-and-trigger:
     runs-on: ubuntu-latest
