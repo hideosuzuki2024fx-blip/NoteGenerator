@@ -6,7 +6,9 @@ on:
       message:
         description: "Relay message content"
         required: false
-        default: "🛰️ Default relay trigger"
+        default: "📍 Default relay trigger"
+  repository_dispatch:
+    types: [gpt_relay_trigger]
   push:
     paths:
       - "relay_trigger.txt"
@@ -17,7 +19,6 @@ permissions:
 jobs:
   layered-relay:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,11 +31,11 @@ jobs:
       - name: Initialize environment
         run: |
           npm init -y
-          echo '{ "type": "module" }' > package.json
+          echo ''{ "type": "module" }' > package.json
           mkdir -p logs/relay
 
       - name: Run Relay Core
-        run: node scripts/relay/relay_core.js "${{ github.event.inputs.message }}"
+        run: node scripts/relay/relay_core.js "{{ github.event.inputs.message }}"
 
       - name: Commit Relay Logs
         run: node scripts/relay/relay_commit.js
