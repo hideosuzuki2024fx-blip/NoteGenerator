@@ -1,21 +1,29 @@
-name: Relay Proxy Trigger
+name: Relay Proxy Listener
 
 on:
-  workflow_dispatch:
-  repository_dispatch:
+  schedule:
+    - cron: "*/5 * * * *
+ workmflow_dispatch:
     types: [relay_proxy_trigger]
 
-jobs:
-  trigger:
+#jobs:
+- listen-and-trigger:
     runs-on: ubuntu-latest
     permissions:
       actions: write
       contents: read
     steps:
-      - name: Trigger relay.yml
+      - name: Fetch Relay Proxy
         run: |
+          response=$(curl -s -o /dev/null -w "%{_http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
+        echo "Response code: $response"
+        if [ "$response" == "200" ]; then
+          echo "Triggering relay.yml..."
           curl -X POST \
-          -H Accept: application/vnd.github-+json \
+          -H Accept: application/vnd.github +json \
           -H Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
           https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
-          -d {\"ref:\":\"main\",\"inputs\":{\"message\":\"Triggered from relay_proxy.html\"}}
+          -d '{"ref":"main","inputs":{"message":"Triggered automatically by relay listener"}}'
+        else
+          echo "Relay proxy returned $response, skipping trigger."
+        fi
