@@ -1,1 +1,1 @@
-修正版リレー起動テスト
+Relay Debug Test Run
