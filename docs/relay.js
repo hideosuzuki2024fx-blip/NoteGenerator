@@ -17,7 +17,7 @@ async function main() {
       const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
         method: "PUT",
         headers: {
-          "Authorization": `Bearer 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`,
+          "Authorization": `Bearer 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`,
           "Accept": "application/vnd.github+json",
           "Content-Type": "application/json"
         },
