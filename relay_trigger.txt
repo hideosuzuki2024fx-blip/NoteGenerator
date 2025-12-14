@@ -1,1 +1,1 @@
-Relay Debug Test Run
+Relay CommonJS Test Run
