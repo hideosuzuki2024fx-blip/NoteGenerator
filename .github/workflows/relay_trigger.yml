@@ -13,15 +13,16 @@ jobs:
     steps:
       - name: Fetch Relay Proxy
         run: |
-          response=$(curl -s -o /dev/null -w "%c{_http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
-          echo "Response code: $response"
-          if [ "$response" == "200" ]; then
+          RESPONS=$(curl -s -o /dev/null -w "%{http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
+          echo "Response code: $RESPONSE"
+          if [ "$RESPONSE" == "200" ]; then
             echo "Triggering relay.yml..."
             curl -X POST \
               -H Accept: application/vnd.github+json \
               -H Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
-              https://api.github.com/repos/nideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
-             -d '{"ref":"main","inputs":{"message":"Triggered automatically by relay listener"}}'
+              -H Y`-GitHub-Api-Version: 2022-11-28 \
+              https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
+              -d '{"ref":"main","inputs":{"message":"Triggered automatically by relay listener"}}'
           else
-            echo "Relay proxy returned $response, skipping trigger."
+            echo "Relay proxy returned $RESPONSE, skipping trigger."
           fi
