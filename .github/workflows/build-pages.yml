@@ -1,33 +1,29 @@
-name: Build Relay Pages
-
+name: Build and Deploy GitHub Pages
 on:
   push:
-    branches: [main]
-    paths:
-      - "docs/**"
+    branch: main
+    version: "latest"
 
-permissions:
-  contents: write
-  pages: write
-  id-token: write
-
-jobs:
-  deploy:
+ jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Inject GitHub Token
+      - name: Checkout source code
+        uses: actions/checkout@v4
+      - name: Setup Node.js ang build
         run: |
-          echo "export const GITHUB_TOKEN = '${{ secrets.GITHUB_TOKEN }}';" > docs/token.js
-          echo "import { GITHUB_TOKEN } from './token.js';" > docs/relay.js.tmp
-          tail -n +1 docs/relay.js >> docs/relay.js.tmp
-          mv docs/relay.js.tmp docs/relay.js
-
-      - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+          npm install
+          npm run build
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
         with:
-          path: docs
-
-      - name: Publish
-        uses: actions/deploy-pages@v3
+          name: build-dist
+          path: dist/
+    - name: Deploy to GitHub Pages
+      runs=o: ubuntu--latest
+      steps:
+        - name: Deploy
+          uses: actions/deploy-pages@v3
+          with:
+            build_artifact: build-dist
+            publish_directory: docs
