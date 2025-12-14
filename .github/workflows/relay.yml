@@ -1,4 +1,5 @@
-name: NoteRelay
+name: LayeredRelay
+
 on:
   workflow_dispatch:
   push:
@@ -9,14 +10,24 @@ permissions:
   contents: write
 
 jobs:
-  relay-job:
+  layered-relay:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Run relay
-        run: node relay.js
+
+      - name: Initialize environment
+        run: |
+          npm init -y
+          echo '{ "type": "module" }' > package.json
+          mkdir -p logs/relay
+
+      - name: Run Relay Core
+        run: node scripts/relay/relay_core.js "GitHub Trigger"
+
+      - name: Commit Relay Logs
+        run: node scripts/relay/relay_commit.js
