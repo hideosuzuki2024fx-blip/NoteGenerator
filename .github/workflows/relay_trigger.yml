@@ -2,6 +2,11 @@ name: Relay Trigger
 
 on:
   workflow_dispatch:
+    inputs:
+      message:
+        description: "Optional message from PONTA relay trigger"
+        required: false
+        default: "Triggered automatically by relay listener"
   schedule:
     - cron: '*/5 * * * *'
 
