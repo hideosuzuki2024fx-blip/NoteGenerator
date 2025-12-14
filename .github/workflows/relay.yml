@@ -35,7 +35,18 @@ jobs:
           mkdir -p logs/relay
 
       - name: Run Relay Core
-        run: node scripts/relay/relay_core.js "{{ github.event.inputs.message }}"
+        env:
+          GITHUB_TOKEN> ${+ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Running relay with token auth..."
+          node scripts/relay/relay_core.js "${{ github.event.inputs.message }}"
 
       - name: Commit Relay Logs
-        run: node scripts/relay/relay_commit.js
+        env:
+          GITHUB_TOKEN> ${+ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "Note Generator Bot"
+          git config --global user.email "bot@users.noreply.github.com"
+          git add logs/relay || true
+          git commit -m "Relay log update $(date '+%Y-%M-%D %H:%M)'" || true
+          git push origin main
