@@ -1,0 +1,22 @@
+{
+  "_note": "Voice preset for Amy Mitarai „> expressive, emotional, poetic editor-in-chief.",
+  "persona": "Amy Mitarai",
+  "base_reference": "\../default_voice_settings.json",
+  "voice_profile": {
+    "tone": "warm",
+    "style": "expressive",
+    "pitch": 1.1,
+    "speed": 0.95,
+    "volume": 0.93,
+    "emotion_strength": 0.8
+  },
+  "filtering": {
+    "reverb": "soft",
+    "eq_boost": "mid-high",
+    "compression": "gentle"
+  },
+  "metadata": {
+    "created_by": "Ponta",
+    "last_updated": "2025-12-16T00:20:00Z"
+  }
+}
