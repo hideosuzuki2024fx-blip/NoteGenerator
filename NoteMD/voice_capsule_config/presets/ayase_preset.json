@@ -1,0 +1,22 @@
+{
+  "_note": "Voice preset for Ayase „> calm, analytical, precise proofreader persona.",
+  "persona": "Ayase",
+  "base_reference": "\../default_voice_settings.json",
+  "voice_profile": {
+    "tone": "cool",
+    "style": "calm",
+    "pitch": 0.92,
+    "speed": 0.9,
+    "volume": 0.85,
+    "emotion_strength": 0.45
+  },
+  "filtering": {
+    "reverb": "minimal",
+    "eq_boost": "low-mid",
+    "compression": "neutral"
+  },
+  "metadata": {
+    "created_by": "Ponta",
+    "last_updated": "2025-12-16T00:35:00Z"
+  }
+}
