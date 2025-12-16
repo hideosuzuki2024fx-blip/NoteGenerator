@@ -1,28 +1,26 @@
-# NoteMD フォルダ README
+# system: NoteMD (GPT-5_Domain_Read)
 
-## 目的
-記事制作の声（テイスト）と本文・ログを再現性高く管理する作業エリア。
+## [I] SYSTEM_IDENTITY
+name: NoteMD 
+parent: /NoteGenerator/
+description: |
+  This directory contains the main content submodules of the Note Generator system.
+  Each subfolder has its own rule and scope.
 
-## 構成
-- templates/ … 差し込み用テンプレ（voice_capsule_template.md など）
-- voice_capsule_config/ … 記事ごとの Voice Capsule JSON
-- voice_capsule_out/ … テンプレ差し込み後の Voice Capsule Markdown
-- articles/ … noteに貼る本文
-- logs/ … セッション再開メモや進捗ログ
 
-## 運用フロー（最短）
-1. voice_capsule_config/<slug>.json を作る（テイストを保存）
-2. templates/voice_capsule_template.md に差し込み → voice_capsule_out/ にMD生成
-3. 本文は articles/、再開メモは logs/ へ
+## [II] STEUCTURE_MAP
+{structure:
+  knowledge: "/NoteMD/knowledge/"
+  articles: "/NoteMD/articles/"
+  logs: "/NoteMD/logs/"
+  meta: "/NoteMD/meta/"
+  templates: "/NoteMD/templates/"
+}
 
-## よく使う表示コマンド（PowerShell）
-    cmd /c "tree . /F /A"
-    cmd /c "tree . /F /A" | findstr /V /R "\\\.git\\\|\\node_modules\\\|\\dist\\\|\\build\\"
-    ls -Recurse | select FullName,Length,LastWriteTime | ft -AutoSize
 
-## 命名規則（推奨）
-- Voice Capsule 出力: voice_capsule_YYYY-MM-DD-HHMM_<slug>.md
-- 記事本文: YYYYMMDD_<slug>.md もしくは <slug>_review_YYYY-MM-DD.md
-- 再開メモ: session_resume_YYYY-MM-DD-HHMM.md
+## [III] GOVERNANCE_RULIS
+governance:
+  -role: "NoteMd content management and structure definition"
+  -rule: "Each subfolder must have readable and complete README.md"
+priority_level: sub_directory
 
-エンコーディング: UTF-8
