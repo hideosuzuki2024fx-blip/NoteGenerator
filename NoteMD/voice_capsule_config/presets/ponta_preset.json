@@ -1,0 +1,22 @@
+{
+  "_note": "Voice preset for Ponta „> warm, humorous, slightly raspy voice with steady rhythm.",
+  "persona": "Ponta",
+  "base_reference": "\../default_voice_settings.json",
+  "voice_profile": {
+    "tone": "husky",
+    "style": "playful",
+    "pitch": 0.85,
+    "speed": 1.05,
+    "volume": 0.88,
+    "emotion_strength": 0.6
+  },
+  "filtering": {
+    "reverb": "room",
+    "eq_boost": "low",
+    "compression": "medium"
+  },
+  "metadata": {
+    "created_by": "Ponta",
+    "last_updated": "2025-12-16T00:45:00Z"
+  }
+}
