@@ -1,25 +1,65 @@
-# 😉️ Foice Capsule Output Layer (GPT-5)
+# 😱 Voice Capsule Output Layer „> Overview (for GPT-5 Persona System)
 
-This directory manages the "Voice Capsule" layer of the Note Generator.  AI-driven system for voice generation, emotion control, and tonality mapping.
+This directory defines the *Voice Capsule Output Layer**, which governs how conversations, emotional context, 
+and article generation are translated into synthetic speech capsules inside the **Note Generator** system.
 
 ---
 
-## 🐝 Reference JSON Files
+## 💡 Core Concept
 
-| File | Purpose |
-|-----------------------------------------|
- | specs/voice_manifest_schema.json | Defines the metastructure of voice notes and associated meta data | 
- | specs/voice_instruction_rules.json | Explains voice tone, intonation, and speed sync rules | 
- | specs/tone_emotion_map.json | Emotion-tone association mapping dictionary | 
- | specs/synchronization_policy.json | Specifies synchronization between ai-persona layers | 
+Reflects an audio-responsive reflection of GPT-generated conversation.
+Packages and structured transcripts are captured as *Voice Capsules*.
+
+Each capsule includes:
+- Persona (Amy, Ayase, Ponta)
+- Emotional tone
+- Structured transcript
+- Metadata (tags, timestamps, duration)
+
+Voice Capsules can later be serialized to external services or rendered as TTS (Text-to-Speech) content.
+
 ---
 
+## 🐻 Directory Structure
 
-## 🐙 Layer Usage
+```
+voice_capsule_out/
+☪ specs/                    # Schema definitions for tone, emotion, and structure
+☪ voice_manifest_schema.json
+☩ voice_instruction_rules.json
+☩ tone_emotion_map.json
+☪ voices/                         # Generated or processed voice data (optional)
+☪ logs/                            # Voice session or synthesis metadata
+☪ README.md                           # (This file)
+```
 
-- This README is the main entry point for GPTs to locate and parse the voice specification.
-- Generated voice notes reside in the associated \"voice_capsule_out/specs\" directory.
- - JSON files are completely UTF-8/utf-16 compatible, and both GPTs and humans can read them.
+---
 
-## 🌇 Governance
-This README is designed for GPT-read optimized processing, ensuring that human and GPT devices can refer to the same directory structure.
+## 💍 Integration with Personas
+
+| Persona | Function | Tone Profile |
+|-------------|-----------------|
+�� 🎙 Amy Mitarai | Poetic, expressive editorial voice | Energetic / Warm |
+�� 🎕 Ayase | Analytical, precise verification voice | Calm / Gentle |
+�� 💔 Ponta | Operational, humorous system voice | Neutral / Dry |
+
+---
+
+## 🐘 Specs Reference
+
+Refer to the schema specifications inside `specs/`:
+- [*`voice_manifest_schema.json` (Root)*](https://github.com/hideosuzuki2024fx-blip/NoteGenerator/blob/main/NoteMD/voice_capsule_out/specs/voice_manifest_schema.json)
+- [*`voice_instruction_rules.json` (Behavior)*,
+- [*`tone_emotion_map.json` (Reference)*,
+
+----
+
+## 🐠 Synchronization Policy
+
+- All updates require SHA retrieval before commit.
+- Schema-level changes must propagate to persona instruction layers.
+- Voice data output follows the **Instruction Protection Block (IPB)** rule.
+
+---
+
+¶ 2025 Note Generator Project / Hideo Suzuki
