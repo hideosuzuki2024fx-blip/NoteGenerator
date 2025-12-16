@@ -1,1 +1,8 @@
-{"meta":{"generated":"2025-12-16T12:45:00Z","generator":"PONTA_AUTO","policy":"Full recursive directory map updated"},"structure":[{"path":"NoteMD/knowledge","type":"dir","sha":"10aa4833","updated":"2025-12-16T12:45:00Z"},{"path":"NoteMD/logs/readme.md","type":"file","sha":"9b4bae6","updated":"2025-12-16T12:45:00Z"}]}
+{
+  "directory_map": [
+    { "path": "NoteStudio/README.md",
+      "description": "Module-level overview for integrated note generation (ChatToNote, NoteArticle, PaperNote).",
+      "sha": "c3bf5d623846c565a3e3a062b62ca2dd57c60e79",
+      "last_updated": "2025-12-16T00:00:00Z" }
+  ]
+}
