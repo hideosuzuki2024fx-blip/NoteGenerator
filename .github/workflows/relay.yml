@@ -19,26 +19,21 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup environment
+        run: echo "Setting up environment for NoteGenerator"
+
+  create_sync_map_seed:
+    needs: commit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create minimal sync_map.yml
         run: |
-          echo "Setting up environment for Note Generator"
+          mkdir -p .github/workflows
+          echo "name: Sync Directory Map and README" > .github/workflows/sync_map.yml
+          echo "on:">> .github/workflows/sync_map.yml
+          echo "  workflow_dispatch:" >> .github/workflows/sync_map.yml
           git config --global user.name "PONTA Bot"
           git config --global user.email "ponta-bot@notegen.system"
-
-      - name: Process staged files
-        run: |
-          echo "Checking modified files..."
-          git status
-          echo "Preparing Base64 encoding and SHA verification..."
-
-      - name: Encode and commit
-        run: |
-          for f in $(git ls-files -m); do
-            echo "Processing $f ..."
-            sha=$(git hash-object $f)
-            base64=$(base64 -w 0 $f)
-            echo "SHA: $sha"
-            echo "Base64 conversion done for $f"
-            git add "$f"
-          done
-          git commit -m "${github.event.inputs.message}"
+          git add .github/workflows/sync_map.yml
+          git commit -m 'auto-create: minimal sync_map.yml seed'
           git push origin main
