@@ -1,0 +1,57 @@
+name: Sync Directory Map and README
+
+on:
+  push:
+    paths:
+      - "docs/**"
+      - "articles/**"
+      - "knowledge/**"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild directory_map.json
+        run: |
+          python3 - <<'PY'
+          import os, json
+          data = {}
+          for r, _, fs in os.walk('.'):
+              if any(x in r for x in ['.git', 'node_modules']): continue
+              md = [f for f in fs if f.endswith(('.md','.json'))]
+              if md: data[r] = md
+          with open('knowledge/directory_map.json','w',encoding='utf-8') as f:
+              json.dump({'auto_generated': True, 'structure': data}, f, indent=2, ensure_ascii=False)
+          PY
+
+      - name: Update README_NoteGen.md
+        run: |
+          python3 - <<'PY'
+          import re
+          text=open('README_NoteGen.md','r',encoding='utf-8').read()
+          section_header="## 📚 運用プロトコル一覧"
+          if section_header in text:
+              pre, _ = text.split(section_header, 1)
+          else:
+              pre = text
+          table = """## 📚 運用プロトコル一覧
+| 名称 | 概要 | ファイルパス |
+|------|------|---------------|
+| シリーズ管理規約 | 連載記事の命名・構成ルール | docs/series_management_protocol.md |
+| 保存規約 | PowerShell保存とGitHub連携 (SHA→Base64 commit rule対応) | docs/save_protocol.md |
+| ディレクトリ構造 | プロジェクト全体の構造一覧 | knowledge/directory_map.json |
+"""
+          new_text = pre + table
+          open('README_NoteGen.md','w',encoding='utf-8').write(new_text)
+          PY
+
+      - name: Commit and push
+        run: |
+          git config --global user.name "PONTA Bot"
+          git config --global user.email "ponta-bot@notegen.system"
+          git add knowledge/directory_map.json README_NoteGen.md
+          git commit -m "auto-sync: refresh directory_map and README" || echo "No changes"
+          git push origin main
