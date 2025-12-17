@@ -1,52 +1,44 @@
-name: LayeredRelay
-
+name: NoteGenerator Relay
 on:
   workflow_dispatch:
     inputs:
       message:
-        description: "Relay message content"
+        description: "Trigger message from Ponta or GPT workflow"
         required: false
-        default: "📍 Default relay trigger"
-  repository_dispatch:
-    types: [gpt_relay_trigger]
+        default: "Manual relay trigger"
   push:
     paths:
-      - "relay_trigger.txt"
-
-permissions:
-  contents: write
-
+      - "articles/**"
+      - "docs/**"
+      - "knowledge/**"
 jobs:
-  layered-relay:
+  commit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Initialize environment
+      - name: Setup environment
         run: |
-          npm init -y
-          echo ''{ "type": "module" }' > package.json
-          mkdir -p logs/relay
+          echo "Setting up environment for Note Generator"
+          git config --global user.name "PONTA Bot"
+          git config --global user.email "ponta-bot@notegen.system"
 
-      - name: Run Relay Core
-        env:
-          GITHUB_TOKEN> ${+ secrets.GITHUB_TOKEN }}
+      - name: Process staged files
         run: |
-          echo "Running relay with token auth..."
-          node scripts/relay/relay_core.js "${{ github.event.inputs.message }}"
+          echo "Checking modified files..."
+          git status
+          echo "Preparing Base64 encoding and SHA verification..."
 
-      - name: Commit Relay Logs
-        env:
-          GITHUB_TOKEN> ${+ secrets.GITHUB_TOKEN }}
+      - name: Encode and commit
         run: |
-          git config --global user.name "Note Generator Bot"
-          git config --global user.email "bot@users.noreply.github.com"
-          git add logs/relay || true
-          git commit -m "Relay log update $(date '+%Y-%M-%D %H:%M)'" || true
+          for f in $(git ls-files -m); do
+            echo "Processing $f ..."
+            sha=$(git hash-object $f)
+            base64=$(base64 -w 0 $f)
+            echo "SHA: $sha"
+            echo "Base64 conversion done for $f"
+            git add "$f"
+          done
+          git commit -m "${github.event.inputs.message}"
           git push origin main
