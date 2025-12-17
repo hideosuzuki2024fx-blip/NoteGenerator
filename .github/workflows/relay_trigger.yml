@@ -6,9 +6,9 @@ on:
       message:
         description: "Optional message from PONTA relay trigger"
         required: false
-        default: "Triggered automatically by relay listener"
-  schedule:
-    - cron: '*/5 * * * *'
+        default: "Triggered manually or by controlled event"
+  # schedule:
+  #   - cron: '*/5 * * * *'  # ⛔️ 自動実行を一時停止
 
 jobs:
   listen-and-trigger:
@@ -16,19 +16,20 @@ jobs:
     permissions:
       actions: write
       contents: read
-    steps: 
+    steps:
       - name: Fetch Relay Proxy
         run: |
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://hideosuzuki2024fx-blip.github.io/NoteGenerator/relay_proxy.html)
           echo "Response code: $RESPONSE"
           if [ "$RESPONSE" == "200" ]; then
-            echo "Triggering relay.yml..."
-            curl -X POST \
-              -H Accept: application/vnd.github+json \
-              -H Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
-              -H Y`-GitHub-Api-Version: 2022-11-28 \
-              https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
-              -d '{"ref":"main","inputs":{"message":"Triggered automatically by relay listener"}}'
+            echo "Would trigger relay.yml, but auto-trigger is disabled for safety."
+            # ↓ 必要なら再度有効化してリレー実行
+            # curl -X POST \
+            #   -H "Accept: application/vnd.github+json" \
+            #   -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            #   -H "X-GitHub-Api-Version: 2022-11-28" \
+            #   https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/actions/workflows/relay.yml/dispatches \
+            #   -d '{"ref":"main","inputs":{"message":"Triggered automatically by relay listener"}}'
           else
             echo "Relay proxy returned $RESPONSE, skipping trigger."
           fi
