@@ -1,0 +1,19 @@
+{
+  "folders": {
+    "templates": "解すしていーペールーデル",
+    "voice_capsule_config": "まですイーールズスが",
+    "voice_capsule_out": "イーールンたのストールンす。・イールンすの(Markdown)",
+    "articles": "noteにいのたとえつるすい",
+    "logs": "かこなのでてがるのてのつめのでの、がし、がしく",
+    "docs": "アンタのあいなはた、あいていませ。"
+  },
+  "namingRules": {
+    "voiceCapsuleOut": "voice_capsule_YYYY-MM-DDH-HHMM_<slug>.md",
+    "article": "YYYMDDD_<slug>.md ますでいいたいっいですい",
+    "sessionLog": "session_resume_YYYY-MM-DD-HHMM.md"
+  },
+  "docs": {
+    "series_protocol": "docs/series_management_protocol.md",
+    "save_protocol": "docs/save_protocol.md"
+  }
+}
