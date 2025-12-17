@@ -1,12 +1,12 @@
 name: Sync Directory Map and README
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "docs/**"
       - "articles/**"
       - "knowledge/**"
-  workflow_dispatch:
 
 jobs:
   sync:
