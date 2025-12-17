@@ -16,7 +16,7 @@ jobs:
 
       - name: Rebuild directory_map.json
         run: |
-          python3 - <<'PY'
+          python3 - <<PY
           import os, json
           data = {}
           for r, _, fs in os.walk('.'):
@@ -31,7 +31,7 @@ jobs:
 
       - name: Update README_NoteGen.md
         run: |
-          python3 - <<'PY'
+          python3 - <<PY
           import re
           text=open('README_NoteGen.md','r',encoding='utf-8').read()
           section_header="## 📚 運用プロトコル一覧"
