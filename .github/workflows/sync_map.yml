@@ -20,9 +20,11 @@ jobs:
           import os, json
           data = {}
           for r, _, fs in os.walk('.'):
-              if any(x in r for x in ['.git', 'node_modules']): continue
+              if any(x in r for x in ['.git', 'node_modules']):
+                  continue
               md = [f for f in fs if f.endswith(('.md','.json'))]
-              if md: data[r] = md
+              if md:
+                  data[r] = md
           with open('knowledge/directory_map.json','w',encoding='utf-8') as f:
               json.dump({'auto_generated': True, 'structure': data}, f, indent=2, ensure_ascii=False)
           PY
