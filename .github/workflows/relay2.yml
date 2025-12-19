@@ -2,7 +2,11 @@ name: Relay2
 
 on: 
   workflow_dispatch:
-
+    inputs:
+      message:
+        description: "Trigger message"
+        required: false
+        default: "Manual trigger by PONTA"
 
 permissions:
   contents: read
