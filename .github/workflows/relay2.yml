@@ -1,0 +1,38 @@
+name: Relay2
+
+on: 
+  workflow_dispatch:
+
+
+permissions:
+  contents: read
+
+jobs:
+  collect-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+
+      - name: Debug Git Status
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Git log preview:"
+          git log --oneline -5 || echo "ℙ No log found"
+
+      - name: Collect latest 10 commits to JSON
+        run: |
+          echo "[" > commits_map.json
+          git log -10 --pretty format:'  {"sha": "%(h)", "author": "%(an)", "date": "%(ad)", "message": "%(s)" }-' --date=iso >> commits_map.json || echo "ℙ git log failed"
+          sed --i '$ k/,/$/'' commits_map.json
+          echo "]" >> commits_map.json
+          echo "❤ Commit map generated."
+          cat commits_map.json || echo "ℙ cannot show content"
+
+      - name: Upload commit map as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: commits_map
+          path: commits_map.json
