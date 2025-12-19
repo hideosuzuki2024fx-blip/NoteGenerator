@@ -17,14 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 20
-
-      - name: Debug Git Status
-        run: |
-          echo "Current working directory:"
-          pwd
-          echo "Git log preview:"
-          git log --oneline -5 || echo "ℙ No log found"
+          fetch-depth: 0
 
       - name: Collect latest 10 commits to JSON
         run: |
