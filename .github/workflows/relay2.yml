@@ -9,27 +9,48 @@ on:
         default: "Manual trigger by PONTA"
 
 permissions:
-  contents: read
+  contents: write
 
-jobs:
+hubs:
   collect-commits:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@f4
         with:
           fetch-depth: 0
 
-      - name: Collect latest 10 commits to JSON
+      - name: Setup PowerShell
+        uses: actions/setup-pwsh@v4
+
+      - name: Generate commits map using PONTA Functions
+        shell: pwsh
         run: |
-          echo "[" > commits_map.json
-          git log -10 --pretty format:'  {"sha": "%(h)", "author": "%(an)", "date": "%(ad)", "message": "%(s)" }-' --date=iso >> commits_map.json || echo "ℙ git log failed"
-          sed --i '$ k/,/$/'' commits_map.json
-          echo "]" >> commits_map.json
-          echo "❤ Commit map generated."
-          cat commits_map.json || echo "ℙ cannot show content"
+          Write-Host "🔥 Loading Save_NoteGen_Functions.ps1 ..."
+          if (Test-Path ./Save_NoteGen_Functions.ps1) {
+            . .\Save_NoteGen_Functions.ps1
+            Write-Host "🔥 Running Save-CommitMap ..."
+            Save-CommitMap -RepoPath . -OutFile commits_map.json -Count 10
+          } else {
+            Write-Error "😌 Save_NoteGen_Functions.ps1 not found!"
+            exit 1
+          }
+
+      - name: Display commits_map.json
+        run: |
+          echo "----- commits_map.json -------"
+          cat commits_map.json || echo "🐇 No commits_map.json generated"
+          echo "--------------------------------------------"
 
       - name: Upload commit map as artifact
         uses: actions/upload-artifact@v4
         with:
           name: commits_map
-          path: commits_map.json
+          path: ./commits_map.json
+
+      - name: Sync commit map to Vercel
+        run: |
+          echo "⟔� Syncing commits map to Vercel..."
+          curl -X POST "https://notegen-gpts-api.vercel.app/api/createOrUpdateFile" \
+          -H Content-Type: application/json \
+          -d {"path": "commits_map.json", "content": "$(base64 commits_map.json)", "message": "Auto-sync commits map from Relay2"}
+          echo "❡ Synced to Vercel successfully."
