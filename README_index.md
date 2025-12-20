@@ -1,3 +1,8 @@
+## How GPT should navigate
+1. Read README_index.md (this file)
+2. Read directory_map.json to locate the target area
+3. If the request is about writing, read meta/catalog.jsonl first, then open only the selected article files
+4. Never rely on commit messages for indexing
 ---
 
 ## 😐 Repository Index (Auto-Generated)
