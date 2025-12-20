@@ -1,0 +1,30 @@
+{
+  "schema": "notegen-taxonomy-v1",
+  "generated_at": "2025-12-20T00:00:00Z",
+  "canonical": {
+    "catalog_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json",
+    "nav_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/NAV.md",
+    "thread_state_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md"
+  },
+  "status_vocab": [
+    { "id": "empty", "desc": "ファイルが空/テンプレのみ" },
+    { "id": "idea", "desc": "アイデアメモ段階" },
+    { "id": "draft", "desc": "下書き（構成・要点がある）" },
+    { "id": "writing", "desc": "本文作成中" },
+    { "id": "review", "desc": "見直し中（推敲・整形）" },
+    { "id": "published", "desc": "公開済み/完成扱い" },
+    { "id": "archived", "desc": "終了・保管" },
+    { "id": "unclassified", "desc": "未分類（暫定）" }
+  ],
+  "tag_vocab": {
+    "topic": ["AI", "GPTs", "DevOps", "執筆", "設計", "雑記"],
+    "format": ["note", "article", "log", "checklist"],
+    "workflow": ["inbox", "needs-structure", "needs-rewrite", "ready-to-publish"]
+  },
+  "rules": [
+    "catalog.json の各 item は status を status_vocab から選ぶ",
+    "tags は tag_vocab の値を優先（なければ追加しても良い）",
+    "コミットメッセージでの索引はしない（catalog.json を正とする）",
+    "改行が潰れても壊れない形式（JSON）を優先する"
+  ]
+}
