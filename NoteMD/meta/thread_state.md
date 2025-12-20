@@ -9,6 +9,7 @@
   - nav: NoteMD/meta/NAV.md
   - thread_state: NoteMD/meta/thread_state.md
   - entrypoints: NoteMD/meta/entrypoints.json
+　- catalog: NoteMD/meta/catalog.json
   - catalog: NoteMD/meta/catalog.json
 
 ## 正の一覧（articles）
@@ -17,3 +18,4 @@
 
 ## 次の1手
 - catalog.json の items に title / status / tags を必要な範囲で追記
+- catalog.jsonl は deprecated（存在しても参照しない）
