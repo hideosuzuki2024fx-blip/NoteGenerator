@@ -4,15 +4,6 @@
   "readme": "NoteMD/articles/README.md",
   "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/articles?ref=main",
   "items": [
-    {
-      "path": "NoteMD/articles/README.md",
-      "kind": "readme",
-      "title": "Articles output README"
-    },
-    {
-      "path": "NoteMD/articles/article_index.json",
-      "kind": "index",
-      "title": "Article index (this file)"
-    }
+    { "path": "NoteMD/articles/README.md", "kind": "readme", "title": "Articles README" }
   ]
 }
