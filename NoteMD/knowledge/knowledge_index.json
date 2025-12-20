@@ -1,5 +1,18 @@
 {
   "schema": "notegen-knowledge-index-v1",
   "generated_at": "2025-12-20T00:00:00Z",
-  "items": []
+  "readme": "NoteMD/knowledge/README.md",
+  "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/knowledge?ref=main",
+  "items": [
+    {
+      "path": "NoteMD/knowledge/README.md",
+      "kind": "readme",
+      "title": "Knowledge module README"
+    },
+    {
+      "path": "NoteMD/knowledge/knowledge_index.json",
+      "kind": "index",
+      "title": "Knowledge index (this file)"
+    }
+  ]
 }
