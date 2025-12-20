@@ -30,3 +30,6 @@ https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteM
 ## Canonical catalog (newline-independent)
 - catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
 - note: if catalog.jsonl exists, treat it as deprecated/non-canonical
+## Canonical catalog (newline-independent)
+- catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
+- note: if catalog.jsonl exists, treat it as deprecated/non-canonical
