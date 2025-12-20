@@ -5,11 +5,12 @@
 - 可能なら commit SHA の raw を使う（ブレ防止）
 
 ## 正の入口（source of truth）
-- root README の `delegation_map` から以下に到達できること：
+- README.md delegation_map:
   - nav: NoteMD/meta/NAV.md
   - thread_state: NoteMD/meta/thread_state.md
   - entrypoints: NoteMD/meta/entrypoints.json
   - catalog: NoteMD/meta/catalog.json
+  - taxonomy: NoteMD/meta/taxonomy.json
 
 ## 正の一覧（articles）
 - catalog.json を正（改行非依存）
