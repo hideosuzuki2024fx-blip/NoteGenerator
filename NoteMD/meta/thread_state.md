@@ -1,7 +1,7 @@
 # Thread State — NoteGenerator repo整理（2025-12-20）
 
 ## 安定性ルール（固定）
-- 検証は raw の `/main/` を正とする（/main とズレる場合がある）
+- 検証は raw の `/main/` を正とする（/refs/heads/main とズレる場合がある）
 - 可能なら commit SHA の raw を使う（ブレ防止）
 
 ## 正の入口（source of truth）
@@ -18,4 +18,5 @@
 
 ## 次の1手
 - catalog.json の items に title / status / tags を必要な範囲で追記する
+
 
