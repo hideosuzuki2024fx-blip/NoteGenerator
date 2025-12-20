@@ -127,3 +127,5 @@ on_load:
   - prepare_note_generation_environment
   - acknowledge_root_as_canonical
 
+Machine entrypoint (manifest): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+
