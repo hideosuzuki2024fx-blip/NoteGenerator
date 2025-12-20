@@ -1,24 +1,21 @@
 # NoteStudio — Documentation Hub
 
-This directory currently contains documentation only.
-Studio implementation files live at repository root.
+This directory provides module-level documentation and navigation.
 
-## Studio components (root)
-| File | Role | Description |
-| --- | --- | --- |
-| [ChatToNoteStudio.tsx](../ChatToNoteStudio.tsx) | Chat-based note generation | Transforms dialogue context into structured note data |
-| [NoteArticleStudio.tsx](../NoteArticleStudio.tsx) | Article generation | Builds long-form content using modular note templates |
-| [PaperNoteStudio_Integrated.tsx](../PaperNoteStudio_Integrated.tsx) | Research paper integration | Generates hybrid academic-style outputs |
-
-## Shared state / utilities
-- [Save_NoteGen_Functions.ps1](../Save_NoteGen_Functions.ps1)
-- [NoteMD/knowledge/](../NoteMD/knowledge/)
-- [NoteMD/articles/](../NoteMD/articles/)
-
-## Synchronization
-- [directory_map.json](../directory_map.json)
+## Repository navigation
 - [README_index.md](../README_index.md)
 - [README.md](../README.md)
+
+## Machine indexes (use first)
+- [knowledge_index.json](../NoteMD/knowledge/knowledge_index.json)
+- [article_index.json](../NoteMD/articles/article_index.json)
+- [log_manifest.json](../NoteMD/logs/log_manifest.json)
+
+## NoteMD structure
+- [NoteMD/README.md](../NoteMD/README.md)
+- [NoteMD/knowledge/README.md](../NoteMD/knowledge/README.md)
+- [NoteMD/articles/README.md](../NoteMD/articles/README.md)
+- [NoteMD/logs/README.md](../NoteMD/logs/README.md)
 
 ---
 Maintained automatically by PONTA
