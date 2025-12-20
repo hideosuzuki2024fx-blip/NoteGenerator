@@ -21,7 +21,7 @@ log_types:
   - security: /NoteMD/logs/security/
 
 storage_format: plain_text (.txt) 
-encoding: UF-8  retention_policy: archive after 180 days
+encoding: UTF-8  retention_policy: archive after 180 days
 
 ## [III] STRUCTURE
 structure:
