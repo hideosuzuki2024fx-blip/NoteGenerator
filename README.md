@@ -87,6 +87,10 @@ delegation_map:
   meta: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/NoteMD/meta
   templates: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/NoteMD/templates
   scripts: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/scripts
+  nav: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/NAV.md
+thread_state: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md
+entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/entrypoints.json
+
 
 ---
 
