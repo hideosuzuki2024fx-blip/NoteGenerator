@@ -1,0 +1,19 @@
+{
+  "schema": "notegen-catalog-json-v1",
+  "generated_at": "2025-12-20T00:00:00Z",
+  "source": "catalog.jsonl is broken by line-flattening; this file is canonical because it is newline-independent.",
+  "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/articles?ref=main",
+  "items": [
+    {"path":"NoteMD/articles/20251213_.md","date_hint":"2025-12-13","status":"empty","tags":[]},
+    {"path":"NoteMD/articles/20251213_Bridgeテスト.md","date_hint":"2025-12-13","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251213_Eドライブ統一テスト.md","date_hint":"2025-12-13","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251217_example-article-commit.md","date_hint":"2025-12-17","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251217_fermenting-words-between-notebooklm-and-notegen.md","date_hint":"2025-12-17","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251217_untitled.md","date_hint":"2025-12-17","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251219_gpt-5-integration-successful.md","date_hint":"2025-12-19","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251219_hakkouteki-sousaku.md","date_hint":"2025-12-19","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/20251219_test-article-from-note-generator.md","date_hint":"2025-12-19","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/bear_ai_psychology_2025-10-21-2328.md","date_hint":"2025-10-21","status":"unclassified","tags":[]},
+    {"path":"NoteMD/articles/toxic_fermentation_2025-11-07-1958.md","date_hint":"2025-11-07","status":"unclassified","tags":[]}
+  ]
+}
