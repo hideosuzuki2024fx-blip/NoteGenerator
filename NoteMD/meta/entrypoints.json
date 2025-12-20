@@ -3,6 +3,11 @@
   "repo": "hideosuzuki2024fx-blip/NoteGenerator",
   "branch": "main",
   "generated_at": "2025-12-20T00:00:00Z",
+  "meta": {
+    "nav_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/NAV.md",
+    "thread_state_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md",
+    "catalog_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json"
+  },
   "modules": {
     "knowledge": {
       "readme_path": "NoteMD/knowledge/README.md",
@@ -12,7 +17,8 @@
     "articles": {
       "readme_path": "NoteMD/articles/README.md",
       "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/articles?ref=main",
-      "machine_index_path": "NoteMD/articles/article_index.json"
+      "machine_index_path": "NoteMD/articles/article_index.json",
+      "catalog_path": "NoteMD/meta/catalog.json"
     },
     "logs": {
       "readme_path": "NoteMD/logs/README.md",
@@ -20,5 +26,5 @@
       "machine_index_path": "NoteMD/logs/log_manifest.json"
     }
   },
-  "note": "If machine index items are empty, use listing_api as the source of truth for file enumeration."
+  "note": "If machine index items are empty, use listing_api. For articles classification/progress, use catalog.json (newline-independent)."
 }
