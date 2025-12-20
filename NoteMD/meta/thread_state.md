@@ -15,21 +15,23 @@
   - nav: NoteMD/meta/NAV.md
   - thread_state: NoteMD/meta/thread_state.md
   - entrypoints: NoteMD/meta/entrypoints.json
+  - catalog: NoteMD/meta/catalog.json
 
 ## 現状（完了）
 - PR-001: 索引ファイル3点を作成
   - NoteMD/knowledge/knowledge_index.json
   - NoteMD/articles/article_index.json
   - NoteMD/logs/log_manifest.json
-- PR-002: README_index / README_NoteGen / NoteStudio/README を更新（NAV導線）
 - PR-006: NoteMD/meta に NAV.md / thread_state.md / entrypoints.json を追加
 - PR-007: root README の delegation_map に nav/thread_state/entrypoints を追加（raw refs/heads）
 - PR-008: NAV.md に安定性ルールを追記（raw refs/heads を正）
+- PR-012: catalog.json を“改行非依存の正”として作成
+- PR-013: root README の delegation_map に catalog を追加
 
 ## 運用ルール（固定）
 - 一覧取得は Contents API を正とする（NAV.md と entrypoints.json に記載）
+- articles の分類/進捗の正は `NoteMD/meta/catalog.json`（JSONLではない）
 - 索引JSONの items が薄い/空でも、Contents API にフォールバックする
 
 ## 次の1手（未着手）
-- NoteMD/meta/catalog.jsonl を新設し、記事の分類/進捗を「ファイルとして」集約する
-  - コミットメッセージ索引には依存しない
+- catalog.json の items に `title/status/tags` を（必要な範囲で）追記する
