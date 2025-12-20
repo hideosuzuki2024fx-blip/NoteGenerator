@@ -25,11 +25,11 @@ structure:
   meta_index: /NoteMD/articles/article_index.json
 
 relations:
-  parent_readme: https://github.com/hideosuzuki2024fx1-blip/NoteGenerator/tree/main/NoteMD 
+  parent_readme: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/NoteMD 
   on_dependencies:
     - /NoteMD/knowledge/
     - /NoteMD/logs/
-    - /NoteMMD/templates/
+    - /NoteMD/templates/
 
 
 ## [III] GOVERNANCE_RULIS
