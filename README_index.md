@@ -1,31 +1,41 @@
 ## How GPT should navigate
-1. Read README_index.md (this file)
-2. Read directory_map.json to locate the target area
-3. If the request is about writing, read meta/catalog.jsonl first, then open only the selected article files
-4. Never rely on commit messages for indexing
+1. Read `README.md` (canonical)
+2. Use this file (`README_index.md`) as a human/GPT navigation hub
+3. Use `directory_map.json` for machine-parsable navigation
+4. Open only the files referenced by index/manifest files
+5. Do not rely on commit messages for indexing
+
 ---
 
 ## 😐 Repository Index (Auto-Generated)
-This file serves as the structured navigation map for the entire Repository.
+This file serves as the structured navigation map for the entire repository.
 
 Use [directory_map.json](./directory_map.json) for a machine-parsable version.
 
 _Automatically synchronized by PONTA_
 
+---
 
- ---
+## Module Sections
 
-### 🔔 Module Sections
-
-
-### 😑  NoteStudio
-
-Integrated module group for GPT-drived note generation.
+### NoteStudio (documentation hub)
+> Note: `NoteStudio/` currently contains documentation (README) only.  
+> Studio components live at repository root.
 
 | File | Description |
------ |------------------|
- | [NoteStudio/README.md]((\/NoteStudio\/README.md)| Module-level overview for integrated note generation (ChatToNote, NoteArticle, PaperNote) |
-  | [ChatToNoteStudio.tsx](\/NoteStudio\/ChatToNoteStudio.tsx)| Chat-based note generation component |
-  | [NoteArticleStudio.tsx](./NoteStudio/NoteArticleStudio.tsx) | Long-form article and content synthesis module |
-  | [PaperNoteStudio_Integrated.tsx](./NoteStudio/PaperNoteStudio_Integrated.tsx)| Unified academic-style hybrid module |
-  | [Save_NoteGen_Functions.psl](./NoteStudio/Save_NoteGen_Functions.psl)| PowerShell utility for note generation backups |
+| --- | --- |
+| [NoteStudio/README.md](./NoteStudio/README.md) | Module-level overview and navigation |
+
+### Studio components (root)
+| File | Description |
+| --- | --- |
+| [ChatToNoteStudio.tsx](./ChatToNoteStudio.tsx) | Chat-based note generation component |
+| [NoteArticleStudio.tsx](./NoteArticleStudio.tsx) | Long-form article and content synthesis module |
+| [PaperNoteStudio_Integrated.tsx](./PaperNoteStudio_Integrated.tsx) | Unified academic-style hybrid module |
+
+### Utilities (root)
+| File | Description |
+| --- | --- |
+| [Save_NoteGen_Functions.ps1](./Save_NoteGen_Functions.ps1) | PowerShell utility for saving notes/articles |
+| [Start_NoteGen_Server.ps1](./Start_NoteGen_Server.ps1) | Start server |
+| [Update_NoteGen_Paths.ps1](./Update_NoteGen_Paths.ps1) | Update paths |
