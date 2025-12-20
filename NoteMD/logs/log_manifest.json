@@ -1,5 +1,18 @@
 {
   "schema": "notegen-log-manifest-v1",
   "generated_at": "2025-12-20T00:00:00Z",
-  "items": []
+  "readme": "NoteMD/logs/README.md",
+  "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/logs?ref=main",
+  "items": [
+    {
+      "path": "NoteMD/logs/README.md",
+      "kind": "readme",
+      "title": "Logs manifest README"
+    },
+    {
+      "path": "NoteMD/logs/log_manifest.json",
+      "kind": "index",
+      "title": "Log manifest (this file)"
+    }
+  ]
 }
