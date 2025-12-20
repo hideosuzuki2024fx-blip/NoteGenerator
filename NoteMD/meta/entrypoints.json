@@ -26,5 +26,5 @@
       "machine_index_path": "NoteMD/logs/log_manifest.json"
     }
   },
-  "note": "If machine index items are empty, use listing_api. For articles classification/progress, use catalog.json (newline-independent)."
+  "note": "Use listing_api for enumeration. For articles classification/progress, use catalog.json (newline-independent)."
 }
