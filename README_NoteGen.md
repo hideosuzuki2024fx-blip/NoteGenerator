@@ -1,22 +1,22 @@
 ---
 gpt_ref: true
 version: "1.2"
-last_updated: "2025-12-16"
-depends_on:
-  - ./README.md
-  - ./README_index.md
-  - ./directory_map.json
-modules:
-  - ./ChatToNoteStudio.tsx
-  - ./NoteArticleStudio.tsx
-  - ./PaperNoteStudio_Integrated.tsx
-utilities:
-  - ./Save_NoteGen_Functions.ps1
+last_updated: "2025-12-20"
+indexes:
+  - ./NoteMD/knowledge/knowledge_index.json
+  - ./NoteMD/articles/article_index.json
+  - ./NoteMD/logs/log_manifest.json
 description:
-  - This document coordinates GPT-driven note generation across modules.
-  - It provides structure, dependency rules, and synchronization pointers.
-  - Human-readable documentation is intentionally minimized.
+  - GPT reference document for the NoteGenerator repository.
+  - Use index files first; avoid full-repo scanning.
 ---
 
 # NoteGenerator
-GPT reference document for the AI-managed multi-layer note generation system.
+Primary navigation:
+- [README_index.md](./README_index.md)
+- [NoteMD/README.md](./NoteMD/README.md)
+
+Indexes (machine-first):
+- [knowledge_index.json](./NoteMD/knowledge/knowledge_index.json)
+- [article_index.json](./NoteMD/articles/article_index.json)
+- [log_manifest.json](./NoteMD/logs/log_manifest.json)
