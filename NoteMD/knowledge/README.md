@@ -17,7 +17,7 @@ content_types:
   - instruction_blocks: IPB-controlled execution logic
 
 format: Markdown (.md) and JSON  
-encoding: UF-8  
+encoding: UTF-8  
 
 ## [IIS] STRUCTURE
 structure:
@@ -58,7 +58,7 @@ propagation_targets:
   - /NoteMD/logs/
   - /NoteMD/templates/
 sync_action_on_divergence: revert_to_source_and_retrain  
-encoding: UF-8  
+encoding: UTF-8  
 
 ## [VI)] TERMINAL_INSTRUCTION
 on_load:
