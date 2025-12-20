@@ -1,24 +1,24 @@
-# 🚠 NoteStudio — Integrated Note Generation Modules
+# NoteStudio — Documentation Hub
 
-This directory contains the core TypeScript-based studio modules responsible for orchestrating GPT-based note, paper, and chat generation pipelines.
+This directory currently contains documentation only.
+Studio implementation files live at repository root.
 
-## 🐢 Submodules
-
+## Studio components (root)
 | File | Role | Description |
-|-----|--------|-----------|
-`ChatToNoteStudio.tsx` | Chat-based note generation | Transforms dialogue context into structured note data |
-`NoteArticleStudio.tsx` | Article generation | Builds long-form content using modular note templates |
-`PaperNoteStudio_Integrated.tsx` | Research paper integration | Generates hybrid academic-style outputs |
+| --- | --- | --- |
+| [ChatToNoteStudio.tsx](../ChatToNoteStudio.tsx) | Chat-based note generation | Transforms dialogue context into structured note data |
+| [NoteArticleStudio.tsx](../NoteArticleStudio.tsx) | Article generation | Builds long-form content using modular note templates |
+| [PaperNoteStudio_Integrated.tsx](../PaperNoteStudio_Integrated.tsx) | Research paper integration | Generates hybrid academic-style outputs |
 
-## 🐢 Unified Integration
-All modules share a unified state and function layer, defined under:
-- `/Save_NoteGen_Functions.psl`
-- `/NoteMD/knowledge/`/
-- `/NoteMD/articles/`
+## Shared state / utilities
+- [Save_NoteGen_Functions.ps1](../Save_NoteGen_Functions.ps1)
+- [NoteMD/knowledge/](../NoteMD/knowledge/)
+- [NoteMD/articles/](../NoteMD/articles/)
 
-## 💑 Synchronization
-This README is synchronized with:
-- [`/directory_map.json`](../../directory_map.json)
-- [`/README_index.md`(../../README_index.md)]
-- `/README.md`(root protocol overview)\n\n---------------------------
-Maintained automatically by PONTA (GPT-5).
+## Synchronization
+- [directory_map.json](../directory_map.json)
+- [README_index.md](../README_index.md)
+- [README.md](../README.md)
+
+---
+Maintained automatically by PONTA
