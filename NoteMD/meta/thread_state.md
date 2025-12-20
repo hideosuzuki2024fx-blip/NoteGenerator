@@ -1,37 +1,19 @@
 # Thread State — NoteGenerator repo整理（2025-12-20）
 
-## 目的（固定）
-- GPT/GPTsが「どこに何があるか」を迷わず辿れるようにする
-- “短期記憶の揮発”による脱線・ループ・捏造寄り回答を減らす
-- 人間の手作業（探す・コピペ・置換）を最小化する
-
 ## 安定性ルール（固定）
-- 検証・参照は raw の `/refs/heads/main/` を優先する
-- `/main/` と `/refs/heads/main/` で内容が違う場合は、`/refs/heads/main/` を正とする
+- 検証は raw の `/refs/heads/main/` を正とする（/main とズレる場合がある）
 - 可能なら commit SHA の raw を使う（ブレ防止）
 
 ## 正の入口（source of truth）
-- root README の `delegation_map` から以下に到達できること：
+- README.md delegation_map:
   - nav: NoteMD/meta/NAV.md
   - thread_state: NoteMD/meta/thread_state.md
   - entrypoints: NoteMD/meta/entrypoints.json
   - catalog: NoteMD/meta/catalog.json
 
-## 現状（完了）
-- PR-001: 索引ファイル3点を作成
-  - NoteMD/knowledge/knowledge_index.json
-  - NoteMD/articles/article_index.json
-  - NoteMD/logs/log_manifest.json
-- PR-006: NoteMD/meta に NAV.md / thread_state.md / entrypoints.json を追加
-- PR-007: root README の delegation_map に nav/thread_state/entrypoints を追加（raw refs/heads）
-- PR-008: NAV.md に安定性ルールを追記（raw refs/heads を正）
-- PR-012: catalog.json を“改行非依存の正”として作成
-- PR-013: root README の delegation_map に catalog を追加
+## 正の一覧（articles）
+- catalog.json を正（改行非依存）
+- catalog.jsonl は deprecated（存在しても参照しない）
 
-## 運用ルール（固定）
-- 一覧取得は Contents API を正とする（NAV.md と entrypoints.json に記載）
-- articles の分類/進捗の正は `NoteMD/meta/catalog.json`（JSONLではない）
-- 索引JSONの items が薄い/空でも、Contents API にフォールバックする
-
-## 次の1手（未着手）
-- catalog.json の items に `title/status/tags` を（必要な範囲で）追記する
+## 次の1手
+- catalog.json の items に title / status / tags を必要な範囲で追記
