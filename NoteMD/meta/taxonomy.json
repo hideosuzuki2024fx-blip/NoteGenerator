@@ -2,9 +2,9 @@
   "schema": "notegen-taxonomy-v1",
   "generated_at": "2025-12-20T00:00:00Z",
   "canonical": {
-    "catalog_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json",
-    "nav_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/NAV.md",
-    "thread_state_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md"
+    "catalog_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json",
+    "nav_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/NAV.md",
+    "thread_state_raw": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/thread_state.md"
   },
   "status_vocab": [
     { "id": "empty", "desc": "ファイルが空/テンプレのみ" },
@@ -28,3 +28,4 @@
     "改行が潰れても壊れない形式（JSON）を優先する"
   ]
 }
+

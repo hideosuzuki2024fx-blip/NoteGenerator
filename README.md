@@ -87,11 +87,11 @@ delegation_map:
   meta: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/NoteMD/meta
   templates: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/NoteMD/templates
   scripts: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/scripts
-  nav: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/NAV.md
-thread_state: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md
-entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/entrypoints.json
-catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
-taxonomy: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/taxonomy.json
+  nav: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/NAV.md
+thread_state: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/thread_state.md
+entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/entrypoints.json
+catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json
+taxonomy: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json
 
 
 ---
@@ -126,3 +126,4 @@ on_load:
   - establish_persona_context
   - prepare_note_generation_environment
   - acknowledge_root_as_canonical
+

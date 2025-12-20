@@ -1,6 +1,6 @@
 ## Stability rule (important)
-- Prefer raw URLs with `/refs/heads/main/` when verifying content.
-- If results differ between `/main/` and `/refs/heads/main/`, treat `/refs/heads/main/` as the source of truth.
+- Prefer raw URLs with `/main/` when verifying content.
+- If results differ between `/main/` and `/refs/heads/main/`, treat `/main/` as the source of truth.
 
 # NoteMD Navigation (Human/GPT)
 
@@ -20,8 +20,8 @@ Logs:
 https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/logs?ref=main
 
 ## Canonical indexes
-- catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
-- taxonomy (vocab): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/taxonomy.json
+- catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json
+- taxonomy (vocab): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json
 - note: catalog.jsonl は deprecated（参照しない）
 
 ## Machine index files (may be empty)
@@ -33,3 +33,5 @@ https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteM
 - README.md (canonical)
 - README_index.md (repo navigation)
 - README_NoteGen.md (GPT reference)
+
+
