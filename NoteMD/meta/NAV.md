@@ -1,3 +1,7 @@
+## Stability rule (important)
+- Prefer raw URLs with `/refs/heads/main/` when verifying content.
+- If results differ between `/main/` and `/refs/heads/main/`, treat `/refs/heads/main/` as the source of truth.
+
 # NoteMD Navigation (Human/GPT)
 
 ## Rule (do this first)
