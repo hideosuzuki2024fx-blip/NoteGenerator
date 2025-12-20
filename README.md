@@ -91,7 +91,6 @@ delegation_map:
 thread_state: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/thread_state.md
 entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/entrypoints.json
 catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
-catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/catalog.json
 taxonomy: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/refs/heads/main/NoteMD/meta/taxonomy.json
 
 
