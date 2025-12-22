@@ -1,32 +1,19 @@
-# GPT Entry Point (Machine-First)
+# GPT ENTRYPOINT (READ-ONLY KNOWLEDGE BASE)
 
-このリポは **GPTが確実に読める導線**を最優先に設計されています。
-人間が読む必要はありません（必要ならGPTが通訳します）。
+This repository is a **read-only knowledge base for GPT**.
+Human readability is NOT a goal.
 
-## RULES (MUST)
-- **相対パス禁止**：参照は raw URL のみ
-- **blob URL禁止**：github.com/.../blob/... は使わない
-- **巨大ファイル禁止**：1ファイルが大きい場合は分割して index に載せる
-- **入口はここ**：この GPT.md から開始する
+## BOOT SEQUENCE (STRICT)
+1. Load knowledge_manifest.json (raw)
+2. Follow boot_sequence defined there
+3. Read ONLY files listed in raw.allowlist
 
-## Boot sequence
-1. gpt/manifest.json を読む（raw URL）
-2. knowledge_manifest.json を読む（既存の機械用マニフェスト）
-3. NoteMD/meta/NAV.md を読む（辿り方のルール）
-4. NoteMD/meta/catalog.json / 	axonomy.json を読む（索引）
-
-## Raw URLs
-- manifest (this layer):
-  - https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/manifest.json
+## RAW ENTRYPOINTS
 - knowledge_manifest:
-  - https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
-- NAV:
-  - https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/NAV.md
-- catalog:
-  - https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json
-- taxonomy:
-  - https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json
+  https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
 
-## Notes
-- .git/ 配下は対象外（GitHub上のコンテンツとして読めない）
-- 迷子防止のため、追加ファイルは必ず gpt/manifest.json に載せる
+## HARD RULES
+- Read-only. Never mutate files.
+- Do NOT access files outside allowlist.
+- Do NOT use github.com/blob or tree URLs.
+- Do NOT assume .git or Git internals exist.
