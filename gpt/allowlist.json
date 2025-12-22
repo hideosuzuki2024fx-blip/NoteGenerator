@@ -1,0 +1,8 @@
+{
+  "schema": "notegen-allowlist-v1",
+  "mode": "read-only",
+  "allow_raw_urls": [
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/GPT.md",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json"
+  ]
+}
