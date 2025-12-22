@@ -1,5 +1,9 @@
 # SYSTEM_MANIFEST: Note Generator (GPT-5 Persona System)
 
+## [GPT_ENTRYPOINTS] (machine-first)
+- GPT.md: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/GPT.md
+- gpt/manifest.json: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/manifest.json
+
 ---
 
 ## [I] SYSTEM_IDENTITY
@@ -129,6 +133,7 @@ on_load:
   - acknowledge_root_as_canonical
 
 Machine entrypoint (manifest): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+
 
 
 
