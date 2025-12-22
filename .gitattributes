@@ -4,3 +4,7 @@
 *.json text eol=lf
 *.yml  text eol=lf
 *.yaml text eol=lf
+gpt/manifest.json text eol=lf
+gpt/allowlist.json text eol=lf
+GPT.md text eol=lf
+knowledge_manifest.json text eol=lf
