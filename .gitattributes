@@ -12,3 +12,4 @@ NoteMD/meta/*.json text eol=lf
 NoteMD/meta/*.md text eol=lf
 NoteMD/config/*.json text eol=lf
 NoteMD/meta/entrypoints.json text eol=lf
+NoteMD/meta/catalog.json text eol=lf
