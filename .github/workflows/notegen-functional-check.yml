@@ -1,0 +1,66 @@
+name: notegen-functional-check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate NoteGenerator functional structure
+        run: |
+          set -e
+
+          # 1) required files
+          req=(
+            "NoteGenerator.spec.md"
+            "knowledge_manifest.json"
+            "gpt/allowlist.json"
+            "NoteMD/config/init_context.json"
+            "NoteMD/meta/taxonomy.json"
+            "NoteMD/meta/catalog.json"
+            "NoteMD/meta/NAV.md"
+            "NoteMD/meta/thread_state.md"
+          )
+
+          for f in "\"; do
+            if [ ! -f "\" ]; then
+              echo "Missing required file: \"
+              exit 1
+            fi
+          done
+
+          # 2) manifest -> raw refs must be in allowlist
+          python3 - << 'PY'
+          import json, sys
+
+          with open("knowledge_manifest.json", encoding="utf-8") as f:
+              m = json.load(f)
+
+          raw = m.get("raw", {})
+          if not raw:
+              print("ERROR: manifest.raw missing")
+              sys.exit(1)
+
+          with open("gpt/allowlist.json", encoding="utf-8") as f:
+              a = json.load(f)
+
+          allow = set(a.get("raw_urls", []))
+          if not allow:
+              print("ERROR: allowlist empty")
+              sys.exit(1)
+
+          for k, url in raw.items():
+              if "/blob/" in url or "/tree/" in url:
+                  print("ERROR: forbidden blob/tree URL:", url)
+                  sys.exit(1)
+              if url not in allow:
+                  print("ERROR: manifest raw not in allowlist:", k, url)
+                  sys.exit(1)
+
+          print("OK: NoteGenerator functional structure is consistent")
+          PY
