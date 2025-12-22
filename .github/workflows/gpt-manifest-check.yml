@@ -1,0 +1,45 @@
+name: gpt-manifest-check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch manifest
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json -o knowledge_manifest.json
+      - name: Check URLs in manifest.raw
+        run: |
+          python3 - << 'PY'
+          import json, sys, urllib.request
+
+          with open("knowledge_manifest.json", "r", encoding="utf-8") as f:
+            m = json.load(f)
+
+          raw = m.get("raw", {})
+          if not isinstance(raw, dict) or not raw:
+            print("manifest.raw is empty or not a dict", file=sys.stderr)
+            sys.exit(1)
+
+          failed = []
+          for k, url in raw.items():
+            try:
+              req = urllib.request.Request(url, headers={"User-Agent": "gpt-manifest-check"})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                if r.status != 200:
+                  failed.append((k, url, r.status))
+            except Exception as e:
+              failed.append((k, url, str(e)))
+
+          if failed:
+            print("FAILED URLS:")
+            for item in failed:
+              print(item)
+            sys.exit(1)
+
+          print("OK: all manifest.raw URLs reachable")
+          PY
