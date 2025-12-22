@@ -1,0 +1,4 @@
+# Enforce LF for GPT-facing text files
+*.md  text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
