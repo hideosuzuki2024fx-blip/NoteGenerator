@@ -1,24 +1,32 @@
 {
-  "schema": "notegen-knowledge-manifest-v2",
-  "mode": "read-only-knowledge-base",
+  "schema": "notegen-knowledge-manifest-v3",
+  "mode": "functional-note-generator",
   "repo": "hideosuzuki2024fx-blip/NoteGenerator",
   "branch": "main",
 
   "raw": {
+    "spec": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteGenerator.spec.md",
     "allowlist": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/allowlist.json",
-    "entrypoint": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/GPT.md"
+    "init_context": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/config/init_context.json",
+    "taxonomy": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json",
+    "catalog": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json",
+    "NAV": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/NAV.md",
+    "thread_state": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/thread_state.md"
   },
 
   "boot_sequence": [
+    "load raw.spec",
     "load raw.allowlist",
-    "load raw.entrypoint"
+    "load raw.init_context",
+    "load raw.taxonomy",
+    "load raw.catalog",
+    "use raw.NAV as navigation rules",
+    "use raw.thread_state as persistent state"
   ],
 
-  "hard_rules": [
-    "This repository is read-only.",
-    "Files outside raw.allowlist MUST NOT be read.",
-    "Relative paths are forbidden.",
-    "github.com/blob or tree URLs are forbidden.",
-    "Git internals (.git) are inaccessible and must not be referenced."
+  "rules": [
+    "Operate strictly according to NoteGenerator.spec.md",
+    "Read-only outside of defined persistence rules",
+    "Do not access files not listed in raw.allowlist"
   ]
 }
