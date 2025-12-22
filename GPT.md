@@ -1,19 +1,16 @@
-# GPT ENTRYPOINT (READ-ONLY KNOWLEDGE BASE)
-
-This repository is a **read-only knowledge base for GPT**.
-Human readability is NOT a goal.
+# GPT ENTRYPOINT (READ-ONLY)
 
 ## BOOT SEQUENCE (STRICT)
-1. Load knowledge_manifest.json (raw)
-2. Follow boot_sequence defined there
-3. Read ONLY files listed in raw.allowlist
-
-## RAW ENTRYPOINTS
-- knowledge_manifest:
-  https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+1. Read raw: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+2. Follow oot_sequence in knowledge_manifest.json
+3. Read ONLY URLs listed in raw allowlist (raw_urls)
 
 ## HARD RULES
 - Read-only. Never mutate files.
 - Do NOT access files outside allowlist.
-- Do NOT use github.com/blob or tree URLs.
-- Do NOT assume .git or Git internals exist.
+- Use ONLY raw.githubusercontent.com URLs (no blob/tree).
+- Treat knowledge_manifest.json as the single authority.
+
+## QUICK LINKS (RAW)
+- knowledge_manifest: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+- allowlist: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/allowlist.json
