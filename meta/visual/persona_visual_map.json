@@ -1,0 +1,20 @@
+{
+  "Amy": {
+    "hair": "long blonde",
+    "style": "warm professional",
+    "expression": "soft smile",
+    "role": "composition and tone"
+  },
+  "Ayase"": {
+    "hair": "short silver",
+    "style": "modern monochrome",
+    "expression": "focused calm",
+    "role": "logic and verification"
+  },
+  "Ponta": {
+    "hair": "white beard",
+    "style": "kimono traditional",
+    "expression": "gentle humor",
+    "role": "practical support"
+  }
+}
