@@ -1,13 +1,12 @@
 {
-  "version": "1.0",
-  "updated": "2025-12-22T23:40:00+09:00",
-  "allow": {
-    "articles": true,
-    "knowledge": true,
-    "logs": true,
-    "meta": false,
-    "bridge": false,
-    "scripts": false
-  },
-  "notes": "GPTaccesseu{Frvlistmfah.true/ÿ◊öêTJAXZefweyXtrue.}"
+  "schema": "notegen-allowlist-v2",
+  "mode": "functional",
+  "raw_urls": [
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/GPT.md",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/allowlist.json",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/gpt/manifest.json",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/entrypoints.json",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json"
+  ]
 }
