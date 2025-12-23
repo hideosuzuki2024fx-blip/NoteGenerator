@@ -1,0 +1,11 @@
+{
+  "version": "2.0",
+  "updated": "2025-12-23T10:07:00+09:00",
+  "active_branch": "main",
+  "allowlist_path": "gpt/allowlist.json",
+  "log_directory": "logs/",
+  "articles_directory": "articles/",
+  "knowledge_directory": "knowledge/",
+  "safe_mode": true,
+  "notes": "config file for NoteGenerator GPT system configuration."
+}
