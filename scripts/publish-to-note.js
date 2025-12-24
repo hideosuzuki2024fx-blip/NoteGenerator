@@ -1,68 +1,41 @@
-import { chromium } from "playwright";
 import fs from "fs";
-import path from "path";
+import fetch from "node-fetch";
 
-(async () => {
-  console.log("🚀 Starting note publish (draft test)...");
+const cookies = JSON.parse(fs.readFileSync("note_cookies.json"));
+const cookieHeader = cookies.map(c => `${c.name}=${c.value}`).join("; ");
 
-  // --- Secrets ---
-  const email = process.env.NOTE_EMAIL;
-  const password = process.env.NOTE_PASSWORD;
+const articlePath = process.env.ARTICLE_PATH;
+const publishMode = process.env.PUBLISH_MODE || "draft";
 
-  if (!email || !password) {
-    console.error("❌ Missing NOTE_EMAIL or NOTE_PASSWORD in GitHub Secrets.");
-    process.exit(1);
-  }
+if (!articlePath) {
+  console.error("❌ ARTICLE_PATH が指定されてないッス！");
+  process.exit(1);
+}
 
-  // --- Article Path ---
-  const articlePath =
-    process.env.ARTICLE_PATH ||
-    path.resolve(process.cwd(), "../NoteMD/articles/test_dispatch.md");
+const articleBody = fs.readFileSync(articlePath, "utf-8");
+const title = articleBody.split("\n")[0].replace(/^# /, "") || "Untitled";
 
-  if (!fs.existsSync(articlePath)) {
-    console.error(`❌ Article not found: ${articlePath}`);
-    process.exit(1);
-  }
+const payload = {
+  title,
+  body: `<p>${articleBody.replace(/\n/g, "<br>")}</p>`,
+  publish_status: publishMode,
+};
 
-  const content = fs.readFileSync(articlePath, "utf8");
+console.log("🚀 [Ponta] note に投稿開始:", title, `(${publishMode})`);
 
-  // --- Browser ---
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
+const res = await fetch("https://note.com/api/v1/text_notes", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Cookie": cookieHeader,
+    "User-Agent": "Mozilla/5.0",
+  },
+  body: JSON.stringify(payload),
+});
 
-  try {
-    // --- Login ---
-    await page.goto("https://note.com/login", { waitUntil: "domcontentloaded" });
+if (!res.ok) {
+  console.error("❌ [Ponta] 投稿失敗:", await res.text());
+  process.exit(1);
+}
 
-    await page.fill('input[type="email"]', email);
-    await page.fill('input[type="password"]', password);
-    await page.click('button[type="submit"]');
-
-    await page.waitForNavigation({ waitUntil: "networkidle" });
-    console.log("✅ Logged in to note.com");
-
-    // --- New Article ---
-    await page.goto("https://note.com/notes/new", { waitUntil: "domcontentloaded" });
-    await page.waitForSelector("textarea");
-
-    await page.fill(
-      "textarea",
-      `✑ [TEST] Draft note from GitHub Actions\n\n${content}`
-    );
-
-    await page.waitForTimeout(1500);
-
-    // --- Save Draft ---
-    await page.keyboard.press("Control+S");
-    await page.waitForTimeout(2000);
-
-    console.log("💾 Draft saved successfully");
-
-  } catch (err) {
-    console.error("❌ Error during publish:", err);
-    process.exit(1);
-  } finally {
-    await browser.close();
-    console.log("🛑 Browser closed");
-  }
-})();
+console.log("✅ [Ponta] note投稿成功:", await res.json());
