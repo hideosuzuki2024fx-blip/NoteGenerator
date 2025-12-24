@@ -1,0 +1,48 @@
+name: Publish to note
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: "Path to markdown article"
+        required: true
+        type: string
+      publish_mode:
+        description: "draft or public"
+        required: true
+        default: "draft"
+        type: choice
+        options:
+          - draft
+          - public
+
+jobs:
+  publish-note:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps
+
+      - name: Restore note login state
+        run: |
+          echo "${NOTE_STATE_JSON}" > note-state.json
+        env:
+          NOTE_STATE_JSON: ${{ secrets.NOTE_STATE_JSON }}
+
+      - name: Publish article to note
+        run: |
+          node scripts/publish-to-note.js \
+            --article "${{ inputs.article_path }}" \
+            --mode "${{ inputs.publish_mode }}" \
+            --state "./note-state.json"
