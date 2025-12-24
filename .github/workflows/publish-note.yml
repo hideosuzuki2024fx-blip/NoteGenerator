@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm install playwright node-fetch
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
       - name: Generate fresh note cookie
         run: node scripts/generate-note-cookie.js
         env:
