@@ -1,0 +1,16 @@
+{
+  "persona": {
+    "Amy": "NoteMD/persona/Amy_Persona.md",
+    "Ayayse": "NoteMD/persona/Ayase_Persona.md",
+    "Ponta": "NoteMD/persona/Ponta_Persona.md"
+  },
+  "layer": {
+    "World": "NoteMD/layer/LayerA_WorldContext.md",
+    "Core": "NoteMD/layer/LayerC_DialogueOrchestration.md"
+  },
+  "knowledge": {
+    "Interaction": "NoteMD/knowledge/Interaction_Core.md",
+    "Registry": "NoteMD/knowledge/Knowledge_Registry.md",
+    "Manifest": "NoteMD/knowledge/knowledge_manifest.json"
+  }
+}
