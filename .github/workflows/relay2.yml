@@ -1,6 +1,6 @@
 name: Relay2
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       message:
@@ -49,7 +49,7 @@ hubs:
 
       - name: Sync commit map to Vercel
         run: |
-          echo "⟔� Syncing commits map to Vercel..."
+          echo "⟔� Syncing commits map to Vercel..."
           curl -X POST "https://notegen-gpts-api.vercel.app/api/createOrUpdateFile" \
           -H Content-Type: application/json \
           -d {"path": "commits_map.json", "content": "$(base64 commits_map.json)", "message": "Auto-sync commits map from Relay2"}
