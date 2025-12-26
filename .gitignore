@@ -21,3 +21,7 @@ NoteMD/logs/**/sample_*.json
 .DS_Store
 .vercel/
 node_modules/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
