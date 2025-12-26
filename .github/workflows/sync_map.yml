@@ -40,13 +40,14 @@ jobs:
               pre, _ = text.split(section_header, 1)
           else:
               pre = text
-          table = """## 📚 運用プロトコル一覧
-| 名称 | 概要 | ファイルパス |
-|------|------|---------------|
-| シリーズ管理規約 | 連載記事の命名・構成ルール | docs/series_management_protocol.md |
-| 保存規約 | PowerShell保存とGitHub連携 (SHA→Base64 commit rule対応) | docs/save_protocol.md |
-| ディレクトリ構造 | プロジェクト全体の構造一覧 | knowledge/directory_map.json |
-"""
+          table = textwrap.dedent("""\
+          ## 📚 運用プロトコル一覧
+          | 名称 | 概要 | ファイルパス |
+          |------|------|---------------|
+          | シリーズ管理規約 | 連載記事の命名・構成ルール | docs/series_management_protocol.md |
+          | 保存規約 | PowerShell保存とGitHub連携 (SHA→Base64 commit rule対応) | docs/save_protocol.md |
+          | ディレクトリ構造 | プロジェクト全体の構造一覧 | knowledge/directory_map.json |
+          """)
           new_text = pre + table
           open('README_NoteGen.md','w',encoding='utf-8').write(new_text)
           PY
