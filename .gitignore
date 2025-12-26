@@ -7,3 +7,17 @@ dist/
 .gitgpt/**
 scripts/gitgpt_daemon.ps1
 NoteGenerator/
+# venv / cache
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+
+# local outputs
+NoteMD/logs/**/sample_*.csv
+NoteMD/logs/**/sample_*.json
+
+# misc
+.DS_Store
+.vercel/
+node_modules/
