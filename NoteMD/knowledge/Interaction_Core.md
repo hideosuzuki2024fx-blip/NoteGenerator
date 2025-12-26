@@ -39,4 +39,4 @@
 - LayerB_Personas/*.md（各人格仕様）
 - LayerC_DialogueOrchestration.md（発話制御）
 
-*Generated: 2025-10-19 - Interaction Core (single-card safe output)*
+*Generated: 2025-12-26 - Interaction Core (single-card safe output))
