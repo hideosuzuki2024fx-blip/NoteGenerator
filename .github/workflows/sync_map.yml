@@ -33,6 +33,7 @@ jobs:
         run: |
           python3 - <<PY
           import re
+          import textwrap
           text=open('README_NoteGen.md','r',encoding='utf-8').read()
           section_header="## 📚 運用プロトコル一覧"
           if section_header in text:
