@@ -25,3 +25,16 @@ node_modules/
 **/__pycache__/
 **/*.pyc
 **/.pytest_cache/
+# Node (never commit)
+bridge/node_modules/
+bridge/.package-lock.json
+bridge/npm-debug.log*
+bridge/yarn-error.log*
+
+# note_sampler outputs (generated)
+NoteMD/logs/note_sampler/*.csv
+NoteMD/logs/note_sampler/*.log
+NoteMD/logs/note_sampler/_*.log
+
+# generated bundle (if re-creatable)
+NoteMD/knowledge/_collected_for_upload.zip
