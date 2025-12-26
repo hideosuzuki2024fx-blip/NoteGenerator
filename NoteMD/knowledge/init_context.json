@@ -1,0 +1,23 @@
+{
+  "context_version": "1.0",
+  "description": "Noteピーールタルトヿスデーニタアテタンシヤン フウトートートリーミード",
+  "default_personas": [
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/knowledge/personas/Amy_Persona.md",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/knowledge/personas/Ayase_Persona.md",
+    "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/knowledge/personas/Ponta_Persona.md"
+  ],
+  "world_context": "https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/knowledge/LayerA_WorldContext.md",
+  "boot_sequence": [
+    "load_personas",
+    "apply_world_context",
+    "activate_editor_team",
+    "ready_for_session"
+  ],
+  "session": {
+    "mode": "creative",
+    "tone": "fermentative",
+    "lang": "ja",
+    "auto_tagging": true,
+    "structure_mode": "まかいて、カードータンのらとまして、カードータンのらとまして、ストのたのイフレイログ"
+  }
+}
