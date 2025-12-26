@@ -1,0 +1,13 @@
+{
+  "type": "map",
+  "base": "E\\NoteGenerator\\NoteMD",
+  "default": "articles",
+  "directories": {
+    "articles": "\\NoteMD\\articles",
+    "knowledge": "\\NoteMD\\knowledge",
+    "docs": "\\NoteMD\\docs",
+    "persona": "\\NoteMD\\persona",
+    "fragment": "\\NoteMD\\fragment",
+    "system": "\\NoteMD\\system"
+  }
+}
