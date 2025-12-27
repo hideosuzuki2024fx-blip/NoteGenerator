@@ -8,7 +8,6 @@
 ### 📘 参照ファイル
 
 #### 🔹 `entrypoints.json`
-
 ```json
 {
   "boot_sequence": [
@@ -22,9 +21,8 @@
 ```
 
 #### 🔹 `NAV.md`
-
-* GPT Initialization セクションが `entrypoints.json` に対応。
-* ペルソナ・Layerファイルを順序通り記述。
+- GPT Initialization セクションが `entrypoints.json` に対応。
+- ペルソナ・Layerファイルを順序通り記述。
 
 ---
 
@@ -43,13 +41,12 @@ def auto_boot():
         register_persona(content)
 ```
 
-* Layer構造・ペルソナは逐次読み込み
-* 読み込み順と構文依存のため順序厳守
+- Layer構造・ペルソナは逐次読み込み
+- 読み込み順と構文依存のため順序厳守
 
 ---
 
 ### 🧩 出力調整（Interaction_Coreより）
-
 ```markdown
 ## Output Prefix Rules
 - Amy: 🥰
@@ -60,13 +57,11 @@ def auto_boot():
 ---
 
 ### 📍設置場所
-
-* `NoteMD/knowledge/boot/auto_init.md`
+- `NoteMD/knowledge/boot/auto_init.md`
 
 ---
 
 ### ✅ この初期化が完了すると？
-
-* GPTが起動直後に **完全整備済み状態**（ペルソナ適用・レイヤー構造・出力prefix）で始動可能。
-* 手動ロード不要。
-* 対話冒頭からトーン・口調・装飾が適切に反映。
+- GPTが起動直後に **完全整備済み状態**（ペルソナ適用・レイヤー構造・出力prefix）で始動可能。
+- 手動ロード不要。
+- 対話冒頭からトーン・口調・装飾が適切に反映。
