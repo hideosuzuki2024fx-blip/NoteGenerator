@@ -1,0 +1,11 @@
+on:
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Path to the Markdown article'
+        required: true
+        type: string
+      publish_mode:
+        description: 'Publish mode (draft/public)'
+        required: true
+        type: string
