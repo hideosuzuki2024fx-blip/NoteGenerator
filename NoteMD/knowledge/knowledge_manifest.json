@@ -1,10 +1,24 @@
 {
-  "version": "1.2",
-  "init_context": "NoteMD/config/init_context.json",
-  "personas": [
-    "NoteMD/knowledge/personas/Amy_Persona.md",
-    "NoteMD/knowledge/personas/Ayase_Persona.md",
-    "NoteMD/knowledge/personas/Ponta_Persona.md"
-  ],
-  "world": "NoteMD/knowledge/LayerA_WorldContext.md"
+  "articles": [
+    {
+      "path": "articles/20260105_interaction-core-eng.md",
+      "title": "interaction_core_eng",
+      "category": "tone"
+    },
+    {
+      "path": "articles/20260105_layera-worldcontext-eng.md",
+      "title": "layera_worldcontext_eng",
+      "category": "context"
+    },
+    {
+      "path": "articles/20260105_layerc-dialogue-orchestration-eng.md",
+      "title": "layerc_dialogue_orchestration_eng",
+      "category": "orchestration"
+    },
+    {
+      "path": "articles/20260105_github-commit-manual.md",
+      "title": "github_commit_manual",
+      "category": "manual"
+    }
+  ]
 }
