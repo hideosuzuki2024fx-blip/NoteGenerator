@@ -19,6 +19,11 @@
       "path": "articles/20260105_github-commit-manual.md",
       "title": "github_commit_manual",
       "category": "manual"
+    },
+    {
+      "path": "articles/readme_notegen.md",
+      "title": "readme_notegen",
+      "category": "manual"
     }
   ]
 }
