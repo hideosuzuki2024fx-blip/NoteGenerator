@@ -1,11 +1,16 @@
+name: Publish Note
 on:
   workflow_dispatch:
     inputs:
       article_path:
-        description: 'Path to the Markdown article'
+        description: 'Path to article file'
         required: true
-        type: string
       publish_mode:
-        description: 'Publish mode (draft/public)'
+        description: 'Publish mode'
         required: true
-        type: string
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo test
+        run: echo "Publish workflow triggered"
