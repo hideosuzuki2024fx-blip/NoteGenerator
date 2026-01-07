@@ -1,16 +1,10 @@
 name: Publish Note
 on:
   workflow_dispatch:
-    inputs:
-      article_path:
-        description: 'Path to article file'
-        required: true
-      publish_mode:
-        description: 'Publish mode'
-        required: true
-jobs:
+
+jobs: 
   build:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Echo test
-        run: echo "Publish workflow triggered"
+        run: echo "Publish workflow triggered without inputs"
