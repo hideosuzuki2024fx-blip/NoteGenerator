@@ -3,6 +3,7 @@
     { "path": "NoteStudio/README.md",
       "description": "Module-level overview for integrated note generation (ChatToNote, NoteArticle, PaperNote).",
       "sha": "c3bf5d623846c565a3e3a062b62ca2dd57c60e79",
-      "last_updated": "2025-12-16T00:00:00Z" }
+      "last_updated": "2025-12-16T00:00:00Z",
+      "type": "system" }
   ]
 }
