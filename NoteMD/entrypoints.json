@@ -1,9 +1,0 @@
-{
-  "boot_sequence": [
-    "NoteMD/knowledge/LayerA_WorldContext.md",
-    "NoteMD/knowledge/LayerB_Personas.md",
-    "NoteMD/knowledge/LayerC_DialogueOrchestration.md",
-    "NoteMD/knowledge/Interaction_Core.md"
-  ],
-  "personas_path": "NoteMD/knowledge/personas/"
-}

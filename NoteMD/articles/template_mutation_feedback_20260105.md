@@ -1,2 +1,0 @@
-# Template Mutation Feedback
-This document describes a feedback mechanism for template mutation analysis. It identifies and tracks deviations between current template versions and their history, providing insights for automated template revision.
