@@ -1,2 +1,34 @@
-on:n::on
-    workflow_dispatch:
+on:n:
+  workflow_dispatch:
+  push:
+    paths:
+      - "articles/**"
+      - "docs/**"
+      - "knowledge/**"
+
+jobs:
+
+  commit:
+    runs: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup environment
+        run: echo "Setting up environment for NoteGenerator"
+
+  create_sync_map_seed:
+    needs: commit
+    runs: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create minimal sync_map.yml
+        run: |
+          mkdir -p knowledge
+          echo "name: Sync Directory Map and README" > sync_map.yml
+          echo "on">>sync_map.yml
+          echo "  workflow_dispatch::" >>sync_map.yml
+          git config --global user.name "PONTA Bot"
+          git config --global user.email "ponta-bot@notegen.system"
+          git add ./sync_map.yml
+          git commit -m 'auto-create: minimal sync_map.yml seed'
+          git push origin main
