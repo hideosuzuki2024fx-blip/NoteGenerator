@@ -1,10 +1,42 @@
 name: Publish Note
+
 on:
   workflow_dispatch:
+    inputs:
+      article_path:
+        description: "Path to the article file (e.g. NoteMD/articles/20260108_boot-init.md)"
+        required: true
+        default: "NoteMD/articles/auto_init.md"
+      publish_mode:
+        description: "Mode for publication or initialization"
+        required: false
+        default: "boot-initialize"
 
-jobs: 
-  build:
+jobs:
+  publish:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Echo test
-        run: echo "Publish workflow triggered without inputs"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Log workflow inputs
+        run: |
+          echo "👍 article_path: ${{ github.event.inputs.article_path }}"
+          echo "ナイ 期，說のーシレー": ${{ github.event.inputs.publish_mode }}"
+      - name: Commit boot initialization
+        run: |
+          echo "Boot sequence triggered for ${{ github.event.inputs.article_path }}"
+          echo "Mode: ${{ github.event.inputs.publish_mode }}"
+          echo "こたリーわタラしてく、のー・トリームータパーャのパール"
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          working-directory: ./
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
