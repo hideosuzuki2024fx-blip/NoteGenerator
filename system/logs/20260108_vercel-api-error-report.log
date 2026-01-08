@@ -1,12 +1,12 @@
-# ￡訜開南素司 服站店木
+# VERCEL API ERROR - REPORT
 
-Vercelのし、でと、かしっにでき
+Date: 2026-01-08
+Target: vercel-access-api.vercel.app
+Error Category: api_function_not_found
+Error Message: UnrecognizedFunctionError: listRepoFiles
+Action: Attempted to retrieve repository file list from Vercel API as a proxy for GetContents.
+Result: 404 Not Found
 
-```{ra}
-error code: 404 Not Found
-error message: UnrecognizedFunctionError: listRepoFiles
-```
+Recommendation: Implement actual endpoints on Vercel backend to deliver response to REST requests, e.g. /api/listRepoFiles.
 
-この由于通行控にていてあるたらのストは、GitHub 图复文し报行をいたっでらは指法ぎ
-
-ストたら、行控でする。ベスト、パスト、レットで場
+Solution: Switch to GitHub API save flow until the Vercel function apis are properly exposed.
