@@ -59,7 +59,7 @@ if ($PWD.Path -ne (Resolve-Path $env:NOTEGEN_BASE).Path) {
 }
 
 # Markdown記事を保存
-$articlePath = "articles/" + (Get-Date -Format "yyyyMMddHHmm") + "_note.md"
+$articlePath = "NoteMD/articles/" + (Get-Date -Format "yyyyMMddHHmm") + "_note.md"
 $content = Get-Content -Path "drafts/current_note.md" -Raw
 Set-Content -Path $articlePath -Value $content -Encoding UTF8
 

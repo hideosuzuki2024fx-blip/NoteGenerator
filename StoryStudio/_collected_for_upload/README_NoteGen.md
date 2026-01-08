@@ -10,6 +10,6 @@
 - Save_NoteGen_Functions.ps1 … 保存系の共通関数（仕様と実装）
 
 ## 保存ルール（再掲）
-- 記事: articles/YYYYMMDD_<slug>.md
+- 記事: NoteMD/articles/YYYYMMDD_<slug>.md
 - VoiceCapsule: voice_capsule_out/voice_capsule_YYYY-MM-DD-HHMM_<slug>.md
 - 再開メモ: logs/session_resume_YYYY-MM-DD-HHMM.md

@@ -1,27 +1,27 @@
 {
   "articles": [
     {
-      "path": "articles/20260105_interaction-core-eng.md",
-      "title": "interaction_core_eng",
+      "path": "system/layers/interaction-core.json",
+      "title": "interaction_core",
       "category": "tone"
     },
     {
-      "path": "articles/20260105_layera-worldcontext-eng.md",
-      "title": "layera_worldcontext_eng",
+      "path": "system/layers/layera-worldcontext.json",
+      "title": "layera_worldcontext",
       "category": "context"
     },
     {
-      "path": "articles/20260105_layerc-dialogue-orchestration-eng.md",
-      "title": "layerc_dialogue_orchestration_eng",
+      "path": "system/layers/layerc-dialogueorchestration.json",
+      "title": "layerc_dialogue_orchestration",
       "category": "orchestration"
     },
     {
-      "path": "articles/20260105_github-commit-manual.md",
+      "path": "system/manuals/github-commit-manual.json",
       "title": "github_commit_manual",
       "category": "manual"
     },
     {
-      "path": "articles/readme_notegen.md",
+      "path": "NoteMD/knowledge/manual/readme_notegen.md",
       "title": "readme_notegen",
       "category": "manual"
     }

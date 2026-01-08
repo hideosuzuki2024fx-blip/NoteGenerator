@@ -5,10 +5,10 @@
 ---
 
 ### 🧪 概要
-このファイルは、`notegen-gpts-api.vercel.app` の `createOrUpdateFile` エンドポイントを通じて作成されました。正常にコミットされていれば、GitHub 上の `NoteGenerator/articles/` ディレクトリに以下の名前で保存されています：
+このファイルは、`notegen-gpts-api.vercel.app` の `createOrUpdateFile` エンドポイントを通じて作成されました。正常にコミットされていれば、GitHub 上の `NoteGenerator/NoteMD/articles/` ディレクトリに以下の名前で保存されています：
 
 ```
-articles/test_commit_from_gpt_2025-12-19.md
+NoteMD/articles/test_commit_from_gpt_2025-12-19.md
 ```
 
 ---
