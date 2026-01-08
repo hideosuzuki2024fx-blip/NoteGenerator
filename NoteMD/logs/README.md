@@ -30,7 +30,7 @@ structure:
   errors: /NoteMD/logs/errors/
   system: /NoteMD/logs/system/
   security: /NoteMD/logs/security/
-  manifest_index: /NoteMD/logs/log_manifest.json
+  manifest_index: /system/log_manifest.json
 
 relations:
   parent_readme: https://github.com/hideosuzuki2024fx1-blip/NoteGenerator/tree/main/NoteMD 
@@ -69,3 +69,4 @@ on_load: |
   - register_logging_paths
   - enable_integrity_check
   - sync_with_meta_and_articles
+

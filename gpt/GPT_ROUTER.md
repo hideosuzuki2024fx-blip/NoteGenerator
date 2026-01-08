@@ -4,7 +4,7 @@ Deterministic routing for tasks. Keep each task within 1-3 steps.
 
 | Task | Read (order) | Action (primary → fallback) |
 | --- | --- | --- |
-| Explore repo layout | knowledge_manifest.json → NoteMD/meta/entrypoints.json → NoteMD/meta/NAV.md | gh_getContents (fallback vx_getContents) |
+| Explore repo layout | knowledge_manifest.json → system/entrypoints.json → NoteMD/meta/NAV.md | gh_getContents (fallback vx_getContents) |
 | Read a file | target file path | gh_getContents (fallback vx_getContents) |
 | Write/update text file | target file path | vx_putFile (fallback gh_putFile) |
 | Write/update binary file | target file path | gh_putFile |
@@ -23,3 +23,4 @@ Notes:
 gpt/ACTIONS_CATALOG.json
 gpt/ACTIONS_SCHEMA_OBSERVATION.md
 ```
+

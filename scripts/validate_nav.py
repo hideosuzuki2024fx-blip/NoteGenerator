@@ -84,7 +84,7 @@ def validate_manifest(errors: list[str]) -> None:
 
 
 def validate_entrypoints(errors: list[str]) -> None:
-    entry_path = ROOT / "NoteMD/meta/entrypoints.json"
+    entry_path = ROOT / "system/entrypoints.json"
     data = json.loads(read_text(entry_path))
 
     meta = data.get("meta", {})
@@ -93,7 +93,7 @@ def validate_entrypoints(errors: list[str]) -> None:
         if not rel:
             errors.append(f"Unparseable raw URL in entrypoints.json: {key} -> {url}")
             continue
-        ensure_exists(rel, "NoteMD/meta/entrypoints.json meta", errors)
+        ensure_exists(rel, "system/entrypoints.json meta", errors)
 
     modules = data.get("modules", {})
     for module_name, module in modules.items():
@@ -101,7 +101,7 @@ def validate_entrypoints(errors: list[str]) -> None:
             rel = module.get(field)
             if not rel:
                 continue
-            ensure_exists(rel, f"NoteMD/meta/entrypoints.json modules.{module_name}.{field}", errors)
+            ensure_exists(rel, f"system/entrypoints.json modules.{module_name}.{field}", errors)
 
 
 def validate_nav_md(errors: list[str]) -> None:
@@ -131,7 +131,7 @@ def validate_actions_catalog(errors: list[str]) -> None:
 
 
 def validate_gpt_nav(errors: list[str]) -> None:
-    boot_path = ROOT / "gpt/GPT_BOOT.md"
+    boot_path = ROOT / "Boot/GPT_BOOT.md"
     router_path = ROOT / "gpt/GPT_ROUTER.md"
 
     boot_md = read_text(boot_path)
@@ -179,3 +179,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

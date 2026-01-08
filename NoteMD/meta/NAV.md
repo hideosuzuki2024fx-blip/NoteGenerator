@@ -20,18 +20,19 @@ Logs:
 https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/logs?ref=main
 
 ## Canonical indexes
-- catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json
-- taxonomy (vocab): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json
+- catalog (canonical): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/system/catalog.json
+- taxonomy (vocab): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/system/taxonomy.json
 - note: catalog.jsonl は deprecated（参照しない）
 
 ## Machine index files (may be empty)
-- NoteMD/knowledge/knowledge_index.json
-- NoteMD/articles/article_index.json
-- NoteMD/logs/log_manifest.json
+- system/knowledge_index.json
+- system/article_index.json
+- system/log_manifest.json
 
 ## Recommended entrypoints
 - README.md (canonical)
 - README_index.md (repo navigation)
 - README_NoteGen.md (GPT reference)
+
 
 

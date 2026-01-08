@@ -14,11 +14,12 @@
 - [NoteMD/meta/NAV.md](./NoteMD/meta/NAV.md)
 
 ### Machine indexes
-- [knowledge_index.json](./NoteMD/knowledge/knowledge_index.json)
-- [article_index.json](./NoteMD/articles/article_index.json)
-- [log_manifest.json](./NoteMD/logs/log_manifest.json)
+- [knowledge_index.json](./system/knowledge_index.json)
+- [article_index.json](./system/article_index.json)
+- [log_manifest.json](./system/log_manifest.json)
 
 ### Quick links
 - [README_NoteGen.md](./README_NoteGen.md)
 - [NoteStudio/README.md](./NoteStudio/README.md)
 - [NoteMD/README.md](./NoteMD/README.md)
+

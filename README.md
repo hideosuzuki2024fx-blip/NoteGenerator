@@ -89,9 +89,9 @@ delegation_map:
   scripts: https://github.com/hideosuzuki2024fx-blip/NoteGenerator/tree/main/scripts
   nav: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/NAV.md
 thread_state: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/thread_state.md
-entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/entrypoints.json
-catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/catalog.json
-taxonomy: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/NoteMD/meta/taxonomy.json
+entrypoints: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/system/entrypoints.json
+catalog: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/system/catalog.json
+taxonomy: https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/system/taxonomy.json
 
 
 ---
@@ -128,4 +128,5 @@ on_load:
   - acknowledge_root_as_canonical
 
 Machine entrypoint (manifest): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
+
 
