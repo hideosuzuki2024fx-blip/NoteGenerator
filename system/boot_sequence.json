@@ -1,7 +1,10 @@
 {
-  "boot_priority": [
-    "README.md",
-    "knowledge_manifest.json",
-    "directory_map.json"
-  ]
+  "boot_priority": {
+    "types": [
+      "system",
+      "setting",
+      "boot_sequence"
+    ],
+    "strategy": "type_based_autoload"
+  }
 }
