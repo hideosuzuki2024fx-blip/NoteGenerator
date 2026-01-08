@@ -8,4 +8,4 @@ This is a test file created using the notegen-gpts-api.vercel.app API via the `c
 
 ---
 
-✅ If you see this file in the `articles/` directory of the repository, the API connection is confirmed as operational!
+✅ If you see this file in the `NoteMD/articles/` directory of the repository, the API connection is confirmed as operational!
