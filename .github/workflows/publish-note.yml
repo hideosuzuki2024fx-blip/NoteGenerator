@@ -2,8 +2,15 @@ name: Publish Note
 
 on:
   workflow_dispatch:
+    inputs:
+      article_path:
+        description: "Path of the article to publish"
+        required: true
+      publish_mode:
+        description: "Publishing mode: default/force"
+        required: true
 
-jobs:
+jobs: 
   publish-note:
     runs-on: ubuntu-latest
 
