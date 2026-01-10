@@ -1,33 +1,30 @@
-name: Publish Note
+name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883\uec1f Publish Note"
 
-on:
+nn:
   workflow_dispatch:
     inputs:
       article_path:
-        description: 'Path to the article file (e.g., NoteMD/articles/test.md)'
+        description: "Path to the note article"
         required: true
+        type: string
       publish_mode:
-        description: 'Publish mode (preview or public)'
+        description: "Publish mode (test or production)"
         required: false
-        default: 'preview'
+        default: "test"
+        type: string
 
-jobs:
+jobS:
   publish:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Print inputs
-        run: |
-          echo "‘ article_path: ${{ inputs.article_path }}"
-          echo "✑ publish_mode: ${{ inputs.publish_mode }}"
-
-      - name: Checkout repository
+    steps:
+      - name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883\uec1f Checkout"
         uses: actions/checkout@v3
-      
-      - name: Trigger Vercel Deployment
-        uses: amondnet/vercel-action@25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL-ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID ]}
-          vercel-args: "--prod"
-          working-directory: ./
+      - name: "\ud886\uf956\ufc00\ufa5f\ueb00\ud883\d\ueb0a Debug inputs"
+        run: |
+          echo "\ud881\uf975\ufc00\ufa5f\ueb00\ud883 article_path: ${{ github.event.inputs.article_path }}"
+          echo "\ud882\uff86\ufc00\ufa5f\ueb00\ud883  publish_mode: ${{ github.event.inputs.publish_mode }}"
+      - name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883 Publish Note"
+        run: |
+          echo "Simulating publishing for article at: ${{ github.event.inputs.article_path }}"
+          echo "Publish mode: ${{ github.event.inputs.publish_mode }}"
+          # Actual publishing logic should go here
