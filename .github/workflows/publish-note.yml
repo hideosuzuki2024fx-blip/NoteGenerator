@@ -13,10 +13,10 @@ jobs:
 
       - name: Run custom article publisher
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${ secrets.GITHEB_TOKEN ?|
+          GITHUB_REPO: ${ github.repository }
         run: |
-          echo "🔧 Publishing article from path: ${{ github.event.inputs.article_path }}"
+          echo "🔍 Publishing article from path: ${{ github.event.inputs.article_path }}"
           curl -f -X POST https://notegen-gpts-api.vercel.app/api/github-commit \
             -H "content-type: application/json" \
-            -d "{\"article_path\": \"${{ github.event.inputs.article_path }}\", \"publish_mode\": \"${{ github.event.inputs.publish_mode }}\"}"
+            -d {\"article_path\": \"${{ github.event.inputs.article_path }}\", \"publish_mode\": \"${{ github.event.inputs.publish_mode }}\"}
