@@ -2,28 +2,21 @@ name: Publish Note
 
 on:
   workflow_dispatch:
-    inputs:
-      article_path:
-        description: 'Path to the article file'
-        required: true
-        default: 'NoteMD/articles/sample.md'
-      publish_mode:
-        description: 'Publish mode (default/public)'
-        required: false
-        default: 'default'
 
 jobs:
-  publish:
+  publish-note:
     runs-on: ubuntu-latest
-    steps:
-      - name: Echo inputs
-        run: echo "📄 article_path: ${{ github.event.inputs.article_path }}, mode: ${{ github.event.inputs.publish_mode }}"
 
-      - name: Call NoteGen API
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run custom article publisher
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: ${{ github.repository }}
         run: |
-          curl -X POST https://notegen-gpts-api.vercel.app/api/github-commit \
-            -H "Content-Type: application/json" \
-            -d '{
-              "article_path": "${{ github.event.inputs.article_path }}",
-              "publish_mode": "${{ github.event.inputs.publish_mode }}"
-            }'
+          echo "🔧 Publishing article from path: ${{ github.event.inputs.article_path }}"
+          curl -f -X POST https://notegen-gpts-api.vercel.app/api/github-commit \
+            -H "content-type: application/json" \
+            -d "{\"article_path\": \"${{ github.event.inputs.article_path }}\", \"publish_mode\": \"${{ github.event.inputs.publish_mode }}\"}"
