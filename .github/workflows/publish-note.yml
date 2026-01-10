@@ -1,6 +1,6 @@
-name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883\uec1f Publish Note"
+name: "\ud86c\uff9f Publish Note"
 
-nn:
+on:
   workflow_dispatch:
     inputs:
       article_path:
@@ -13,18 +13,18 @@ nn:
         default: "test"
         type: string
 
-jobS:
+job:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883\uec1f Checkout"
+      - name: "\ud86c\uff9f Checkout"
         uses: actions/checkout@v3
-      - name: "\ud886\uf956\ufc00\ufa5f\ueb00\ud883\d\ueb0a Debug inputs"
+      - name: "\ud86c\uff9f Debug inputs"
         run: |
-          echo "\ud881\uf975\ufc00\ufa5f\ueb00\ud883 article_path: ${{ github.event.inputs.article_path }}"
-          echo "\ud882\uff86\ufc00\ufa5f\ueb00\ud883  publish_mode: ${{ github.event.inputs.publish_mode }}"
-      - name: "\ud884\uf95d\ufc00\ufa5f\ueb00\ud883 Publish Note"
+          echo "👈 Article path: ${{ github.event.inputs.article_path }}"
+          echo "👜 Publish mode: ${{ github.event.inputs.publish_mode }}"
+      - name: "👌 Publish Note"
         run: |
           echo "Simulating publishing for article at: ${{ github.event.inputs.article_path }}"
-          echo "Publish mode: ${{ github.event.inputs.publish_mode }}"
+          echo "Publish mode: ${{ github.event.inputs/publish_mode }}"
           # Actual publishing logic should go here
