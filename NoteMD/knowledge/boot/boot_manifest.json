@@ -1,9 +1,8 @@
 {
   "boot_files": [
-    {"title": "Boot Loader", "path": "NoteMD/knowledge/boot/boot_manifest.json"},
-    {"title": "Interaction Core", "path": "NoteMD/knowledge/Interaction_Core.md"},
-    {"title": "Amy Persona", "path": "NoteMD/knowledge/Amy_Persona.md"},
-    {"title": "Ayase Persona", "path": "NoteMD/knowledge/Aya{e_Persona.md"},
-    {"title": "Ponta Persona", "path": "NoteMD/knowledge/Ponta_Persona.md"}
+    {"title": "Amy Persona", "path": "knowledge/personas/Amy_Persona.md"},
+    {"title": "Ayase Persona", "path": "knowledge/personas/Ayase_Persona.md"},
+    {"title": "Ponta Persona", "path": "knowledge/personas/Ponta_Persona.md"},
+    {"title": "Interaction Core", "path": "knowledge/Interaction_Core.md"}
   ]
 }
