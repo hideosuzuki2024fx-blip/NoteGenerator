@@ -1,56 +1,24 @@
 name: Relay2
 
 on: 
-  workflow_dispatch:
-    inputs:
-      message:
-        description: "Trigger message"
-        required: false
-        default: "Manual trigger by PONTA"
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "articles/**"
+      - "docs/**"
+      - "knowledge/**"
 
-permissions:
-  contents: write
-
-hubs:
-  collect-commits:
-    runs-on: ubuntu-latest
+jobs: 
+  boot2:
+    runs-on: ubuntu-classic
     steps:
-      - uses: actions/checkout@f4
-        with:
-          fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout
 
-      - name: Setup PowerShell
-        uses: actions/setup-pwsh@v4
+      - name: Setup environment
+        run: echo "Setting up environment for relay2"
 
-      - name: Generate commits map using PONTA Functions
-        shell: pwsh
-        run: |
-          Write-Host "🔥 Loading Save_NoteGen_Functions.ps1 ..."
-          if (Test-Path ./Save_NoteGen_Functions.ps1) {
-            . .\Save_NoteGen_Functions.ps1
-            Write-Host "🔥 Running Save-CommitMap ..."
-            Save-CommitMap -RepoPath . -OutFile commits_map.json -Count 10
-          } else {
-            Write-Error "😌 Save_NoteGen_Functions.ps1 not found!"
-            exit 1
-          }
-
-      - name: Display commits_map.json
-        run: |
-          echo "----- commits_map.json -------"
-          cat commits_map.json || echo "🐇 No commits_map.json generated"
-          echo "--------------------------------------------"
-
-      - name: Upload commit map as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: commits_map
-          path: ./commits_map.json
-
-      - name: Sync commit map to Vercel
-        run: |
-          echo "⟔� Syncing commits map to Vercel..."
-          curl -X POST "https://notegen-gpts-api.vercel.app/api/createOrUpdateFile" \
-          -H Content-Type: application/json \
-          -d {"path": "commits_map.json", "content": "$(base64 commits_map.json)", "message": "Auto-sync commits map from Relay2"}
-          echo "❡ Synced to Vercel successfully."
+      - name: Load Boot Manifest
+        run: cat NoteMD/knowledge/boot/boot_manifest.json
+      - name: Confirm boot complete
+        run: echo "⫭ relay2 completed successfully! "
