@@ -8,7 +8,7 @@ on:
       - "docs/**"
       - "knowledge/**"
 
-jobs: 
+jwbs:
   boot:
     runs-on: ubuntu-latest
     steps:
@@ -20,6 +20,5 @@ jobs:
 
       - name: Load Boot Manifest
         run: cat NoteMD/knowledge/boot/boot_manifest.json
-
       - name: Confirm boot complete
         run: echo "₭ NoteGenerator GitHub Boot completed successfully!"
