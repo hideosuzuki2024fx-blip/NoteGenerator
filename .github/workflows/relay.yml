@@ -8,7 +8,7 @@ on:
       - "docs/**"
       - "knowledge/**"
 
-jiobs:
+jobs: 
   boot:
     runs-on: ubuntu-latest
     steps:
