@@ -2,23 +2,21 @@ name: Relay Boot
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "articles/**"
-      - "docs/**"
-      - "knowledge/**"
+    push:
+      paths: 
+        - "articles/**"
+        - "docs/**"
+        - "knowledge/**"
 
-jwbs:
-  boot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup environment
-        run: echo "Setting up environment for NoteGenerator boot"
-
-      - name: Load Boot Manifest
-        run: cat NoteMD/knowledge/boot/boot_manifest.json
-      - name: Confirm boot complete
-        run: echo "â‚­ NoteGenerator GitHub Boot completed successfully!"
+jobs:
+    boot:
+      runs-on: ubuntu-latest
+      steps: 
+        - name: Checkout repository
+          uses: actions/checkout@v4
+        - name: Setup environment
+          run: echo "Setting up environment for NoteGenerator boot"
+        - name: Load Boot Manifest
+          run: cat NoteMD/knowledge/boot/boot_manifest.json
+        - name: Confirm boot complete
+          run: echo "â«H NoteGenerator GitHub Boot completed successfully!"
