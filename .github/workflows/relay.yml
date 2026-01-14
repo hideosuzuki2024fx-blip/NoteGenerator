@@ -17,6 +17,6 @@ jobs:
       - name: Setup environment
         run: echo "Setting up environment for NoteGenerator boot"
       - name: Load Boot Manifest
-        run: cat NoteMD/knowledge/boot/boot_manifest.json
+        run: cat "NoteMD/knowledge/boot/boot_manifest.json"
       - name: Confirm boot complete
-        run: echo "â«H NoteGenerator GitHub Boot completed successfully!"
+        run: echo "â«¬ NoteGenerator Boot successfully complete! "
