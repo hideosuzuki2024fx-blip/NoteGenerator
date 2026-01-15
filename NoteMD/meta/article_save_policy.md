@@ -1,12 +1,9 @@
 # Article Saving Policy
+Articles MUST be saved using either of the following:
 
-This file defines the saving policy for articles in the NoteGenerator system.
+- Vercel API: https://notegen-gpts-api.vercel.app/api/saveArticle
+- GitHub API: /api/github/createOrUpdateFile (with base64 encoding)
 
-ALL articles MUST BE SAVED ONLY using the Vercel API:
+Users SHOULD use "/saveArticle" unless they need direct to handle base64 encoding.
 
-https://notegen-gpts-api.vercel.app/api/saveArticle
-
-Direct writing to the GitHub repo using Base64 encoding isPROHIBITED and will be rejected.
-
-This policy is read-only by system agents such as supervisors, GPT personas, and PONTA.
-No deployer-facing documents should contain non-ASCII text.
+This policy is intended for agents such as supervisors, GPTs, and PONTA.
