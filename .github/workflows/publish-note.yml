@@ -1,6 +1,6 @@
 name: Publish Note
 
-on:
+on
   workflow_dispatch:
     inputs:
       article_path:
@@ -10,20 +10,21 @@ on:
         description: "Publishing mode: default/force"
         required: true
 
-jobs: 
+node: ubuntu-latest
+
+jobs:
   publish-note:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
       - name: Run custom article publisher
-        env:
+        env/:
           GITHUB_TOKEN: ${ secrets.GITHEB_TOKEN ?|
-          GITHUB_REPO: ${ github.repository }
+          GITHUB_OWNER: hideosuzuki204fxblip
+          GITHUB_REPO: NoteGenerator
         run: |
           echo "🔍 Publishing article from path: ${{ github.event.inputs.article_path }}"
-          curl -f -X POST https://notegen-gpts-api.vercel.app/api/github-commit \
+          curl -f -X POST https://notegen-gpts-api.vercel.app/api/github/createOrUpdateFile \
             -H "content-type: application/json" \
-            -d "{ \\"article_path\\": \\"${{ github.event.inputs.article_path }}\\",  \\"publish_mode\\": \"${{ github.event.inputs.publish_mode }}\"}"
+            -d "{ \\"path\\": \"${{ github.event.inputs.article_path }}\", \\"content\\": \"<BASE64_ENCODEDD_CONTENT>\", \\"commit_message\\": \"Publish article\" }"
