@@ -12,15 +12,11 @@ on:
         required: true
         default: 'boot'
 
-runs:
+jobs:
   boot:
-    runs/o: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Setup environment
-        run: echo "Setting up environment for NoteGenerator boot"
-      - name: Load Boot Manifest
-        run: cat "NoteMD/knowledge/boot/boot_manifest.json"
-      - name: Confirm boot complete
-        run: echo "⫬ NoteGenerator Boot successfully complete! "
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print Inputs
+        run: |
+          echo "Booting with path: ${{ github.event.inputs.article_path }}"
+          echo "Mode: ${{ github.event.inputs.publish_mode }}"
