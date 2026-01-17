@@ -2,14 +2,25 @@ name: Relay Boot
 
 on:
   workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Bootしてつうしをスンッゼ'
+        required: true
+        default: 'NoteMD/knowledge/boot/auto_init.md'
+      publish_mode:
+        description: 'にのくなさでいのをスンッゼ'
+        required: true
+        default: 'boot'
 
-jubs:
-  runs:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Setup environment
-      run: echo "Setting up environment for NoteGenerator boot"
-     - name: Load Boot Manifest
-      run: cat "NoteMD/knowledge/boot/boot_manifest.json"
-     - name: Confirm boot complete
-      run: echo "⫬ NoteGenerator Boot successfully complete! "
+runs:
+  boot:
+    runs/o: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup environment
+        run: echo "Setting up environment for NoteGenerator boot"
+      - name: Load Boot Manifest
+        run: cat "NoteMD/knowledge/boot/boot_manifest.json"
+      - name: Confirm boot complete
+        run: echo "⫬ NoteGenerator Boot successfully complete! "
