@@ -1,9 +1,0 @@
-{
-  "schema": "notegen-article-index-v1",
-  "generated_at": "2025-12-20T00:00:00Z",
-  "readme": "NoteMD/articles/README.md",
-  "listing_api": "https://api.github.com/repos/hideosuzuki2024fx-blip/NoteGenerator/contents/NoteMD/articles?ref=main",
-  "items": [
-    { "path": "NoteMD/articles/README.md", "kind": "readme", "title": "Articles README" }
-  ]
-}

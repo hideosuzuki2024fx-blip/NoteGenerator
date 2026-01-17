@@ -1,7 +1,0 @@
-{
-  "boot_priority": [
-    "README.md",
-    "knowledge_manifest.json",
-    "directory_map.json"
-  ]
-}

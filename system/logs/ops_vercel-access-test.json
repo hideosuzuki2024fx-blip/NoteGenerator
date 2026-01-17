@@ -1,7 +1,0 @@
-{
-  "id": "ops_vercel-access-test",
-  "title": "Vercel API access test via internal integration",
-  "source_path": "NoteMD/articles/20260102_vercel-access-test.md",
-  "updated_at": "2026-01-08",
-  "source_markdown": "This article is a test to confirm that the Vercel API connection works through the NoteGenerator internal integration."
-}

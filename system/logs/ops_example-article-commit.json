@@ -1,7 +1,0 @@
-{
-  "id": "ops_example-article-commit",
-  "title": "Example article commit via API",
-  "source_path": "system/20251217_example-article-commit.md",
-  "updated_at": "2026-01-08",
-  "source_markdown": "# Example Article\n\nThis is a sample article committed via the notegen-gpts-j8y1sxjzt-maogons-projects.vercel.app API.\n\nIt demonstrates the ability to save Markdown content to GitHub using the saveArticle operation."
-}
