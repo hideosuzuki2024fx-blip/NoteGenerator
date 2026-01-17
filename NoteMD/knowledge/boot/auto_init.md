@@ -1,17 +1,19 @@
 ---
-title: Boot Auto Init
-tags: [boot, system, init]
-
+title: Boot Initialization Core
+tags: [boot, system, persona]
 ---
 
-# Boot Verification Dummy
+# Boot Initialization for Persona Application
 
-This file is used to verify GitHub Actions boot workflow execution.
+This file triggers system boot, loading all required core components:
 
-- Target Path: `NoteMD/knowledge/boot/auto_init.md`
-- Mode: `boot`
+- Amy Persona
+- Ayase Persona
+- Ponta Persona
+- Interaction Core
+- LayerC Dialogue Orchestration
 
-Note: This is a temporary technical file for system-testing purposes.
+It is not a test. It is the true beginning.
 
 - load: personas/Amy_Persona.md
 - load: personas/Ayase_Persona.md
