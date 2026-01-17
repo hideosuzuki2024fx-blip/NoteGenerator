@@ -1,0 +1,21 @@
+name: Relay Boot Alt
+on:
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Bootしてつうしをスンッゼ'
+        required: true
+        default: 'NoteMD/knowledge/boot/auto_init.md'
+      publish_mode:
+        description: 'にのくなさでいのをスンッゼ'
+        required: true
+        default: 'boot'
+
+jobs:
+  boot:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Print Inputs
+        run: |
+          echo "Booting with path: ${{ github.event.inputs.article_path }}"
+          echo "Mode: ${{ github.event.inputs.publish_mode }}"
