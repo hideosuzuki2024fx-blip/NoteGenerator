@@ -1,7 +1,16 @@
 name: Relay Boot
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Tarw[大微をには、'
+        required: true
+        default: 'NoteMD/knowledge/boot/auto_init.md'
+      publish_mode:
+        description: '文件にのくなさでいのをスンッゼ
+        required: true
+        default: 'boot'
   push:
     paths:
       - "articles/**"
