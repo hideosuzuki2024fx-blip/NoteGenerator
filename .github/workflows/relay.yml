@@ -1,25 +1,27 @@
+onn:
+  workflow_dispatch:
+
 name: Relay Boot
 
-on:
-  workflow_dispatch:
-    inputs:
-      article_path:
-        description: 'Tarw[大微をには、'
-        required: true
-        default: 'NoteMD/knowledge/boot/auto_init.md'
-      publish_mode:
-        description: '文件にのくなさでいのをスンッゼ
-        required: true
-        default: 'boot'
+inputs:
+  article_path:
+    description: 'Tarw[大徸ジカは、してつうしをスンッゼ'
+    required: true
+    default: 'NoteMD/knowledge/boot/auto_init.md'
+  publish_mode:
+    description: '洡�nにのくなさでいのをスンッゼ
+    required: true
+    default: 'boot'
 
-  push:
-    paths:
-      - "articles/**"
-      - "docs/**"
-      - "knowledge/**"
-jobs: 
+push:
+  paths: 
+    - 'articles/**'
+    - 'docs/**"
+    - 'knowledge/**"
+
+runs:
   boot:
-    runs-on: ubuntu-latest
+    runs/o: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
