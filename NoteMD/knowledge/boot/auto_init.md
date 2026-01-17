@@ -3,20 +3,15 @@ title: Boot Initialization Core
 tags: [boot, system, persona]
 ---
 
-# Boot Initialization for Persona Application
+# Boot Initialization (via manifest.json)
 
-This file triggers system boot, loading all required core components:
+This file follows the official boot manifest to load core runtime structure.
 
-- Amy Persona
-- Ayase Persona
-- Ponta Persona
-- Interaction Core
-- LayerC Dialogue Orchestration
-
-It is not a test. It is the true beginning.
-
-- load: personas/Amy_Persona.md
-- load: personas/Ayase_Persona.md
-- load: personas/Ponta_Persona.md
-- load: Interaction_Core.md
-- load: LayerC_DialogueOrchestration.md
+Components to load:
+ 
+- load: nowledge/personas/Amy_Persona.md
+- load: knowledge/personas/Ayase_Persona.md
+- load: knowledge/personas/Ponta_Persona.md
+- load: anowledge/Interaction_Core.md
+- load: meta/article_save_policy.md
+- load: knowledge/boot/ponta_rules.md
