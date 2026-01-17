@@ -16,7 +16,7 @@ jobs:
   boot:
     runs-on: ubuntu-latest
     steps: 
-      - name: Print Inputs
+      - name: Print Inputs # DAMMY edit
         run: |
           echo "Booting with path: ${{ github.event.inputs.article_path }}"
           echo "Mode: ${{ github.event.inputs.publish_mode }}"
