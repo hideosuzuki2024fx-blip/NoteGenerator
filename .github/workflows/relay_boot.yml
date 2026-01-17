@@ -3,13 +3,11 @@ name: Relay Boot - Fixed
 on:
   workflow_dispatch:
 
-  # Default trigger without inputs
-
-  runs: 
-    boot:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Run Boot
-          run: |
-            echo "Booting with fixed path: NoteMD/knowledge/boot/auto_init.md"
-            echo "Mode: boot"
+jobs: 
+  boot:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Run Boot
+        run: |
+          echo "Booting with fixed path: NoteMD/knowledge/boot/auto_init.md"
+          echo "Mode: boot"
