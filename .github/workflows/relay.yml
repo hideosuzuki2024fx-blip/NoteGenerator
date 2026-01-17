@@ -11,12 +11,12 @@ on:
         description: '文件にのくなさでいのをスンッゼ
         required: true
         default: 'boot'
+
   push:
     paths:
       - "articles/**"
       - "docs/**"
       - "knowledge/**"
-
 jobs: 
   boot:
     runs-on: ubuntu-latest
