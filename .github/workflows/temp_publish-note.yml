@@ -1,0 +1,31 @@
+name: Publish Note
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Path of the article to publish'
+        required: true
+      publish_mode:
+        description: 'Publishing mode: default or force'
+        required: true
+  push:
+    paths: 
+      - 'NoteMD/articles/**.md'
+
+node: ubuntu-latest
+
+jobs:
+  publish-note:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run custom article publisher
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: hideosuzuki2024fx-blip
+          GITHUB_REPO: NoteGenerator
+        run: |
+          echo "📝 Publishing article from path: ${{ github.event.inputs.article_path }}"
+          curl -f -X POST https://notegen-gpts-api.vercel.app/api/github/createOrUpdateFile             - "content-type:application/json"             -d '{"path": "${{ github.event.inputs.article_path }}", "content": "<BASE64_ENCODED_CONTENT>", "commit_message": "Publish article"}'
