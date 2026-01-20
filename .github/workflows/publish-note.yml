@@ -1,7 +1,16 @@
 name: Publish Note
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      article_path:
+        description: 'Path to article'
+        required: true
+        type: string
+      publish_mode:
+        description: 'Publish mode (default/force)'
+        required: true
+        type: string
   push:
     paths:
       - 'NoteMD/articles/**.md'
@@ -18,4 +27,4 @@ jobs:
           GITHUB_OWNER: hideosuzuki2024fx-blip
           GITHUB_REPO: NoteGenerator
         run: |
-          echo "📝 Publishing article (manual or auto)"
+          echo "📝 Publishing article: ${{ github.event.inputs.article_path }} in mode ${{ github.event.inputs.publish_mode }}"
