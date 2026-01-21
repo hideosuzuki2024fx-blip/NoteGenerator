@@ -3,11 +3,13 @@
 Purpose: give GPT a single, deterministic entrypoint for repo navigation and actions.
 
 ## Non-goals (do not do)
-- Do NOT alter article bodies (Japanese content stays as-is).
-- Do NOT invent API schemas; mark unknown and follow the observation plan.
-- Avoid destructive renames/moves; use aliases or redirects if required.
+
+* Do NOT alter article bodies (Japanese content stays as-is).
+* Do NOT invent API schemas; mark unknown and follow the observation plan.
+* Avoid destructive renames/moves; use aliases or redirects if required.
 
 ## Read order (shortest path)
+
 1. Boot/GPT_BOOT.md (this file)
 2. system/entrypoints.json (single source of truth for canonical paths)
 3. gpt/GPT_ROUTER.md
@@ -16,21 +18,24 @@ Purpose: give GPT a single, deterministic entrypoint for repo navigation and act
 6. NoteMD/meta/NAV.md
 
 ## Task shortcuts
-- Repo structure overview: system/entrypoints.json → NoteMD/knowledge/knowledge_manifest.json → NoteMD/meta/NAV.md
-- Editing code/config: use gpt/GPT_ROUTER.md action map, then follow canonical write rules
-- Actions schema uncertainty: use gpt/ACTIONS_SCHEMA_OBSERVATION.md
+
+* Repo structure overview: system/entrypoints.json → NoteMD/knowledge/knowledge_manifest.json → NoteMD/meta/NAV.md
+* Editing code/config: use gpt/GPT_ROUTER.md action map, then follow canonical write rules
+* Actions schema uncertainty: use gpt/ACTIONS_SCHEMA_OBSERVATION.md
 
 ## Actions routing (fixed)
-- Read files: gh_getContents → fallback vx_getContents
-- Write text files (.md/.json/.yml/.ts/.py/.ps1/etc): vx_putFile → fallback gh_putFile
-- Write binaries (.png/.jpg/.zip/.pdf/etc): gh_putFile
-- Delete: gh_deleteFile
-- Workflow: gh_triggerWorkflow
-- Article save: vx_saveArticle
+
+* Read files: gh_getContents → fallback vx_getContents
+* Write text files (.md/.json/.yml/.ts/.py/.ps1/etc): vx_putFile → fallback gh_putFile
+* Write binaries (.png/.jpg/.zip/.pdf/etc): gh_putFile
+* Delete: gh_deleteFile
+* Workflow: gh_triggerWorkflow
+* Article save: vx_saveArticle
 
 ## Notes on unknown schemas
-- /api/* and /articles request/response schemas are currently unknown.
-- Do not guess. Use gpt/ACTIONS_SCHEMA_OBSERVATION.md to confirm later.
+
+* /api/* and /articles request/response schemas are currently unknown.
+* Do not guess. Use gpt/ACTIONS_SCHEMA_OBSERVATION.md to confirm later.
 
 ```nav-entrypoints
 {
@@ -43,3 +48,32 @@ Purpose: give GPT a single, deterministic entrypoint for repo navigation and act
     "NoteMD/meta/NAV.md"
   ]
 }
+```
+
+```nav-paths
+# Core GPT nav layer
+# (one path per line)
+
+Boot/GPT_BOOT.md
+
+# Entry points (single source of truth)
+system/entrypoints.json
+
+# Router + actions
+gpt/GPT_ROUTER.md
+gpt/ACTIONS_CATALOG.json
+gpt/ACTIONS_SCHEMA_OBSERVATION.md
+gpt/ACTIONS_OPERATIONID_PATCH.md
+
+# Canonical manifest + entrypoints
+NoteMD/knowledge/knowledge_manifest.json
+NoteMD/meta/NAV.md
+NoteMD/meta/thread_state.md
+system/catalog.json
+system/taxonomy.json
+system/init_context.json
+
+# Validation
+scripts/validate_nav.py
+.github/workflows/validate_nav.yml
+```
