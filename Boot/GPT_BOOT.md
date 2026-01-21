@@ -71,7 +71,7 @@ NoteMD/meta/NAV.md
 NoteMD/meta/thread_state.md
 system/catalog.json
 system/taxonomy.json
-system/init_context.json
+NoteMD/config/init_context.json
 
 # Validation
 scripts/validate_nav.py
