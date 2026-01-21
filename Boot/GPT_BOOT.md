@@ -9,15 +9,15 @@ Purpose: give GPT a single, deterministic entrypoint for repo navigation and act
 
 ## Read order (shortest path)
 1. Boot/GPT_BOOT.md (this file)
-2. gpt/GPT_ROUTER.md
-3. gpt/ACTIONS_CATALOG.json
-4. knowledge_manifest.json (canonical legacy manifest)
-5. system/entrypoints.json
+2. system/entrypoints.json (single source of truth for canonical paths)
+3. gpt/GPT_ROUTER.md
+4. gpt/ACTIONS_CATALOG.json
+5. NoteMD/knowledge/knowledge_manifest.json
 6. NoteMD/meta/NAV.md
 
 ## Task shortcuts
-- Repo structure overview: read knowledge_manifest.json → system/entrypoints.json → NoteMD/meta/NAV.md
-- Editing code/config: use GPT_ROUTER action map, then follow canonical write rules
+- Repo structure overview: system/entrypoints.json → NoteMD/knowledge/knowledge_manifest.json → NoteMD/meta/NAV.md
+- Editing code/config: use gpt/GPT_ROUTER.md action map, then follow canonical write rules
 - Actions schema uncertainty: use gpt/ACTIONS_SCHEMA_OBSERVATION.md
 
 ## Actions routing (fixed)
@@ -36,44 +36,10 @@ Purpose: give GPT a single, deterministic entrypoint for repo navigation and act
 {
   "canonical": ["Boot/GPT_BOOT.md"],
   "secondary": [
-    "README.md",
-    "README_index.md",
-    "README_NoteGen.md",
-    "knowledge_manifest.json",
     "system/entrypoints.json",
+    "gpt/GPT_ROUTER.md",
+    "gpt/ACTIONS_CATALOG.json",
+    "NoteMD/knowledge/knowledge_manifest.json",
     "NoteMD/meta/NAV.md"
   ]
 }
-```
-
-```nav-paths
-# Core GPT nav layer
-# (one path per line)
-
-# This file
-
-Boot/GPT_BOOT.md
-
-# Router + actions
-
-gpt/GPT_ROUTER.md
-gpt/ACTIONS_CATALOG.json
-gpt/ACTIONS_SCHEMA_OBSERVATION.md
-gpt/ACTIONS_OPERATIONID_PATCH.md
-
-# Canonical legacy manifest + entrypoints
-
-knowledge_manifest.json
-system/entrypoints.json
-NoteMD/meta/NAV.md
-NoteMD/meta/thread_state.md
-system/catalog.json
-system/taxonomy.json
-system/init_context.json
-
-# Validation
-
-scripts/validate_nav.py
-.github/workflows/validate_nav.yml
-```
-
