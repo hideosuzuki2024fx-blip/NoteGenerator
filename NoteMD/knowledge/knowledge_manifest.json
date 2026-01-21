@@ -1,0 +1,23 @@
+{
+  "meta_files": [
+    {"title": "Interaction Core", "path": "knowledge/Interaction_Core.md"},
+    {"title": "World Context", "path": "knowledge/LayerA_WorldContext.md"},
+    {"title": "Dialogue Orchestration", "path": "knowledge/LayerC_DialogueOrchestration.md"}
+  ],
+  "personas": [
+    {"title": "Amy", "path": "knowledge/personas/Amy_Persona.md"},
+    {"title": "Ayase", "path": "knowledge/personas/Ayase_Persona.md"},
+    {"title": "Ponta", "path": "knowledge/personas/Ponta_Persona.md"}
+  ],
+  "articles": [
+    {"title": "google-sao-takeya-ch2", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch2.md"},
+    {"title": "google-sao-takeya-ch3", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch3.md"},
+    {"title": "google-sao-takeya-ch4", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch4.md"},
+    {"title": "google-sao-takeya-ch4-rebuild", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch4-rebuild.md"},
+    {"title": "google-sao-takeya-ch5-rebuild", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch5-rebuild.md"},
+    {"title": "google-sao-takeya-ch6", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch6.md"},
+    {"title": "google-sao-takeya-ch6-rebuild", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-ch6-rebuild.md"},
+    {"title": "google-sao-takeya-final", "path": "NoteMD/articles/20260110_20260110-google-sao-takeya-final.md"},
+    {"title": "google-sao-takeya", "path": "NoteMD/articles/20260110_google-sao-takeya.md"}
+  ]
+}

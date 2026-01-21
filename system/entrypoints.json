@@ -12,7 +12,7 @@
 
     "catalog": "system/catalog.json",
     "taxonomy": "system/taxonomy.json",
-    "init_context": "system/init_context.json"
+    "init_context": "NoteMD/config/init_context.json"
   },
 
   "modules": {
