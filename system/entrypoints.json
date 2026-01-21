@@ -1,7 +1,33 @@
 {
+  "schema_version": "note-generator-entrypoints-v1",
+  "canonical": {
+    "boot": "Boot/GPT_BOOT.md",
+    "router": "gpt/GPT_ROUTER.md",
+    "actions_catalog": "gpt/ACTIONS_CATALOG.json",
+    "actions_schema_observation": "gpt/ACTIONS_SCHEMA_OBSERVATION.md",
+
+    "knowledge_manifest": "NoteMD/knowledge/knowledge_manifest.json",
+    "nav": "NoteMD/meta/NAV.md",
+    "thread_state": "NoteMD/meta/thread_state.md",
+
+    "catalog": "system/catalog.json",
+    "taxonomy": "system/taxonomy.json",
+    "init_context": "system/init_context.json"
+  },
+
   "modules": {
     "articles": {
+      "root": "NoteMD/articles",
       "readme_path": "NoteMD/articles/README.md"
     }
+  },
+
+  "legacy_aliases": {
+    "knowledge_manifest": "knowledge_manifest.json"
+  },
+
+  "rules": {
+    "single_source_of_truth": "Use canonical paths only; do not guess or probe alternatives except legacy_aliases when explicitly requested.",
+    "action_names": "Call actions by canonical_name only (gh_getContents, vx_putFile, etc). Do NOT call bound_action names directly."
   }
 }
