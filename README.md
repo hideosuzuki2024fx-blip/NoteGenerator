@@ -130,3 +130,17 @@ on_load:
 Machine entrypoint (manifest): https://raw.githubusercontent.com/hideosuzuki2024fx-blip/NoteGenerator/main/knowledge_manifest.json
 
 
+---
+
+## [X] CHANGELOG
+
+### 2026-02-06
+- Consolidated duplicate root-level `knowledge/` content into canonical `NoteMD/knowledge/`.
+- Consolidated root-level `articles/` content into canonical `NoteMD/articles/`.
+- Removed committed runtime/build artifacts:
+  - `bridge/node_modules/`
+  - `bridge/bridge.pid`
+  - `PaperNoteStudio_Integrated.tsx.bak`
+- Expanded `.gitignore` to prevent re-committing generated files and dependency caches.
+- Updated `NoteMD/knowledge/README.md` to describe the active structure and maintenance rule.
+

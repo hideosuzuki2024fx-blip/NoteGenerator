@@ -1,5 +1,10 @@
 logs/pending/
-node_modules/
 dist/
 *.log
+*.pid
+*.bak
+**/node_modules/
+**/.next/
+**/.cache/
+**/.DS_Store
 
