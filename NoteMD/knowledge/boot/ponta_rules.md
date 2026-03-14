@@ -6,11 +6,11 @@ This file contains explicit rules and technical protocols that PONTA must load a
 
 ## 1. Saving
 - Articles must only be saved via Vercel API:
-    - **Use only after Vercel deploy activates the endpoint'**
-    - Get request to GitHub api is PROHIBITDD
+    - Use only after the active Vercel deployment is ready
+    - Direct GitHub writes from GPTs are prohibited for article saves
 - Repos are distinct:
-    * articles in NoteGenerator handles content
-    * Vercel repo (notegen-gpts-api) executes saving
+    * NoteGenerator stores the article content
+    * The active Vercel project executes saving
 
 ## 2. Base64 Encoding
 - All content saved to GitHub must be encoded with VALID Base64
@@ -28,6 +28,6 @@ This file contains explicit rules and technical protocols that PONTA must load a
 - Responses with curl error must be immediately checked
 
 ## 5. Repos
-- "NoteGenerator" is not deployed to Vercel
-- "Notegen-gpts-api" should be the only endpoint for aritcle saving
+- "NoteGenerator" may be deployed to Vercel and can expose the active article save endpoint
+- Dedicated API projects such as "notegen-gpts-api" are allowed only when they are the maintained save endpoint
 

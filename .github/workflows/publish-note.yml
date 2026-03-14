@@ -21,10 +21,30 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Run custom article publisher
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_OWNER: hideosuzuki2024fx-blip
-          GITHUB_REPO: NoteGenerator
+      - name: Resolve article path
+        id: resolve
         run: |
-          echo "📝 Publishing article: ${{ github.event.inputs.article_path }} in mode ${{ github.event.inputs.publish_mode }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            ARTICLE_PATH="${{ github.event.inputs.article_path }}"
+            PUBLISH_MODE="${{ github.event.inputs.publish_mode }}"
+          else
+            ARTICLE_PATH=$(git diff --name-only HEAD^ HEAD -- 'NoteMD/articles/*.md' | head -n 1)
+            PUBLISH_MODE="default"
+          fi
+
+          if [ -z "$ARTICLE_PATH" ]; then
+            echo "No article path could be resolved."
+            exit 1
+          fi
+
+          if [ ! -f "$ARTICLE_PATH" ]; then
+            echo "Resolved article does not exist: $ARTICLE_PATH"
+            exit 1
+          fi
+
+          echo "article_path=$ARTICLE_PATH" >> "$GITHUB_OUTPUT"
+          echo "publish_mode=$PUBLISH_MODE" >> "$GITHUB_OUTPUT"
+      - name: Validate publish request
+        run: |
+          echo "📝 Publishing article: ${{ steps.resolve.outputs.article_path }}"
+          echo "Mode: ${{ steps.resolve.outputs.publish_mode }}"
