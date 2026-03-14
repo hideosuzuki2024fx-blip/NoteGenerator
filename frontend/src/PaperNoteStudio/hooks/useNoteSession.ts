@@ -18,7 +18,12 @@ export function useNoteSession() {
   }
 
   async function handleSave() {
-    await saveToNoteGen(title, markdown);
+    try {
+      await saveToNoteGen(title, markdown);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unknown error";
+      alert(`⚠️ 保存失敗: ${message}`);
+    }
   }
 
   return { title, markdown, setTitle, setMarkdown, handleAIResponse, handleSave, isLoading };
